@@ -1,23 +1,35 @@
-import App from '../App';
 import ErrorPage from '../components/error/ErrorPage';
+import App from '../App';
 import Login from '../components/login/Login';
-import Dashboard from '../components/dashboard/Dashboard';
+import AuthLayout from '../components/authLayout/AuthLayout';
+import PrivateRoute from '../components/privateRoute/PrivateRoute';
+import Overview from '../components/dashboard/overview/Overview';
+import Account from '../components/dashboard/account/Account';
 
 const routes = [
   {
-    path: '/',
-    element: <App />,
+    element: <AuthLayout />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: '/login',
-    element: <Login />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: '/dashboard',
-    element: <Dashboard />,
-    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: '/',
+        element: <App />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: '/login',
+        element: <Login />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: '/dashboard',
+        element: <PrivateRoute />,
+        children: [
+          { index: true, element: <Overview /> },
+          { path: 'account', element: <Account /> },
+        ],
+      },
+    ],
   },
 ];
 
