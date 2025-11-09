@@ -1,13 +1,15 @@
 import styles from './App.module.css';
 import { Navigate } from 'react-router';
+import useAuth from './hooks/useAuth';
 
 function App() {
-  const token = localStorage.getItem('token');
+  const { user, loading } = useAuth();
+
+  if (loading) return <h1>Loading...</h1>;
 
   return (
     <div className={styles.App}>
-      <h1>Dashboard</h1>
-      {token ? (
+      {user ? (
         <Navigate to="/dashboard" replace={true} />
       ) : (
         <Navigate to="/login" replace={true} />
