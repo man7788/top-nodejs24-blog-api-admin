@@ -3,7 +3,7 @@ import { Outlet, Link } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 
 const Dashboard = () => {
-  const { logout } = useAuth();
+  const { user, logout } = useAuth();
 
   return (
     <div className={styles.Dashboard}>
@@ -13,6 +13,8 @@ const Dashboard = () => {
           <Link to="/dashboard">Overview</Link>
           <br></br>
           <Link to="/dashboard/account">Account</Link>
+          <br></br>
+          <Link to="/dashboard/account">{user.name}</Link>
           <br></br>
           <button onClick={logout}>Log Out</button>
         </nav>
