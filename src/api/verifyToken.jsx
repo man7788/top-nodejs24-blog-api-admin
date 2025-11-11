@@ -7,7 +7,6 @@ const verifyToken = async () => {
       mode: 'cors',
     });
 
-    // throw new Error();
     if (response.status === 401) {
       const result = await response.json();
       const error = new Error(result.error.message);
