@@ -40,7 +40,7 @@ function AuthProvider({ children }, props) {
 
     if (result.user) {
       setUser(result.user);
-      navigate('/dashboard');
+      navigate('/dashboard', { replace: true });
     }
   };
 
