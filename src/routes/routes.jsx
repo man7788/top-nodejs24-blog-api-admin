@@ -4,7 +4,9 @@ import Login from '../components/login/Login';
 import AuthLayout from '../components/authLayout/AuthLayout';
 import PrivateRoute from '../components/privateRoute/PrivateRoute';
 import Overview from '../components/dashboard/overview/Overview';
-import Account from '../components/dashboard/account/Account';
+import Settings from '../components/dashboard/settings/Settings';
+import Profile from '../components/dashboard/settings/profile/Profile';
+import Password from '../components/dashboard/settings/password/Password';
 
 const routes = [
   {
@@ -26,7 +28,21 @@ const routes = [
         element: <PrivateRoute />,
         children: [
           { index: true, element: <Overview /> },
-          { path: 'account', element: <Account /> },
+          {
+            path: 'settings',
+            element: <Settings />,
+            children: [{ index: true, element: <Profile /> }],
+          },
+          {
+            path: 'profile',
+            element: <Settings />,
+            children: [{ index: true, element: <Profile /> }],
+          },
+          {
+            path: 'password',
+            element: <Settings />,
+            children: [{ index: true, element: <Password /> }],
+          },
         ],
       },
     ],
