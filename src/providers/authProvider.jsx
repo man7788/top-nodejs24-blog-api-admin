@@ -10,6 +10,8 @@ function AuthProvider({ children }, props) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const [update, setUpdate] = useState(false);
+
   useEffect(() => {
     const verifyUser = async () => {
       const result = await verifyToken();
@@ -28,7 +30,7 @@ function AuthProvider({ children }, props) {
     };
 
     verifyUser();
-  }, []);
+  }, [update]);
 
   const login = async () => {
     const result = await verifyToken();
@@ -52,7 +54,7 @@ function AuthProvider({ children }, props) {
 
   return (
     <AuthContext.Provider
-      value={{ user, loading, error, login, logout }}
+      value={{ user, loading, error, login, logout, update, setUpdate }}
       {...props}
     >
       {children}
