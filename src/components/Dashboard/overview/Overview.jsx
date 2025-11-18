@@ -1,5 +1,4 @@
 import styles from './Overview.module.css';
-import { Navigate } from 'react-router';
 import usePosts from '../../../hooks/usePosts';
 
 const Overview = () => {
@@ -10,7 +9,7 @@ const Overview = () => {
   }
 
   if (error?.statusCode === 401) {
-    return <Navigate to="/login" replace={true} />;
+    return <h1>401 - Unauthorized</h1>;
   }
 
   if (error) {
