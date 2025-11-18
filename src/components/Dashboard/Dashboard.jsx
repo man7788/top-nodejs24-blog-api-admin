@@ -12,10 +12,9 @@ const Dashboard = () => {
         <nav>
           <Link to="/dashboard">Overview</Link>
           <br></br>
-          <Link to="/dashboard/account">Account</Link>
+          <Link to="/dashboard/settings">Settings</Link>
           <br></br>
-          <Link to="/dashboard/account">{user.name}</Link>
-          <br></br>
+          <div>{user.name}</div>
           <button onClick={logout}>Log Out</button>
         </nav>
       </aside>
