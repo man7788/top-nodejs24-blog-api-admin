@@ -12,6 +12,8 @@ const Dashboard = () => {
         <nav>
           <Link to="/dashboard">Overview</Link>
           <br></br>
+          <Link to="/dashboard/posts">Posts</Link>
+          <br></br>
           <Link to="/dashboard/settings">Settings</Link>
           <br></br>
           <div>{user.name}</div>
