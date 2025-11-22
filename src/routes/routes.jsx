@@ -13,6 +13,7 @@ import Password from '../components/dashboard/settings/password/Password';
 import Posts from '../components/dashboard/posts/Posts';
 import PostList from '../components/dashboard/posts/list/PostList';
 import PostEdit from '../components/dashboard/posts/edit/PostEdit';
+import PostCreate from '../components/dashboard/posts/create/PostCreate';
 
 const routes = [
   {
@@ -40,6 +41,7 @@ const routes = [
             children: [
               { index: true, element: <PostList /> },
               { path: ':postId/edit', element: <PostEdit /> },
+              { path: 'create', element: <PostCreate /> },
             ],
           },
           {
