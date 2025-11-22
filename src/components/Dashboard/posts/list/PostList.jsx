@@ -1,5 +1,6 @@
 import styles from './PostList.module.css';
 import { useState } from 'react';
+import { Link } from 'react-router';
 import usePosts from '../../../../hooks/usePosts';
 import PostListItem from './PostListItem';
 
@@ -24,6 +25,8 @@ const PostList = () => {
   return (
     <div className={styles.PostList}>
       <h1>Posts</h1>
+      <Link to="create">Create</Link>
+
       <ul>
         {posts.map((post) => (
           <li key={post.id}>
