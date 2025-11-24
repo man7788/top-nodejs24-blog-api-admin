@@ -14,6 +14,8 @@ const Dashboard = () => {
           <br></br>
           <Link to="/dashboard/posts">Posts</Link>
           <br></br>
+          <Link to="/dashboard/comments">Comments</Link>
+          <br></br>
           <Link to="/dashboard/settings">Settings</Link>
           <br></br>
           <div>{user.name}</div>
