@@ -14,6 +14,10 @@ import Posts from '../components/dashboard/posts/Posts';
 import PostList from '../components/dashboard/posts/list/PostList';
 import PostEdit from '../components/dashboard/posts/edit/PostEdit';
 import PostCreate from '../components/dashboard/posts/create/PostCreate';
+// Comments
+import Comments from '../components/dashboard/comments/Comments';
+import CommentList from '../components/dashboard/comments/list/CommentList';
+import CommentEdit from '../components/dashboard/comments/edit/CommentEdit';
 
 const routes = [
   {
@@ -42,6 +46,14 @@ const routes = [
               { index: true, element: <PostList /> },
               { path: ':postId/edit', element: <PostEdit /> },
               { path: 'create', element: <PostCreate /> },
+            ],
+          },
+          {
+            path: 'comments',
+            element: <Comments />,
+            children: [
+              { index: true, element: <CommentList /> },
+              { path: ':commentId/edit', element: <CommentEdit /> },
             ],
           },
           {
