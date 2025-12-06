@@ -1,6 +1,5 @@
 import styles from './PostList.module.css';
 import { useState } from 'react';
-import { Link } from 'react-router';
 import usePosts from '../../../../hooks/usePosts';
 import PostListItem from './PostListItem';
 
@@ -24,20 +23,27 @@ const PostList = () => {
 
   return (
     <div className={styles.PostList}>
-      <h1>Posts</h1>
-      <Link to="create">Create</Link>
-
-      <ul>
+      <div className={styles.header}>
+        <h4 className={styles.h4}>Title</h4>
+      </div>
+      <div className={styles.header}>
+        <h4 className={styles.h4}>Author</h4>
+      </div>
+      <div className={styles.header}>
+        <h4 className={styles.h4}>Published</h4>
+      </div>
+      <div className={styles.header}></div>
+      <div className={styles.header}></div>
+      <ul className={styles.ul}>
         {posts.map((post) => (
-          <li key={post.id}>
-            <PostListItem
-              post={post}
-              setListError={setListError}
-              update={update}
-              setUpate={setUpate}
-              setListLoading={setListLoading}
-            />
-          </li>
+          <PostListItem
+            key={post.id}
+            post={post}
+            setListError={setListError}
+            update={update}
+            setUpate={setUpate}
+            setListLoading={setListLoading}
+          />
         ))}
       </ul>
     </div>
