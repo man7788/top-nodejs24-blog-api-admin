@@ -1,6 +1,6 @@
 import styles from './PostEdit.module.css';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useParams, Link } from 'react-router';
 import useEditPosts from '../../../../hooks/useEditPost';
 import submitPostUpdate from '../../../../api/submitPostUpdate';
 
@@ -91,44 +91,59 @@ const PostEdit = () => {
   };
 
   if (loading || formLoading) {
-    return <h1>loading...</h1>;
+    return <h2 className={styles.h2}>loading...</h2>;
   }
 
   if (error?.statusCode === 401) {
-    return <h1>401 - Unauthorized</h1>;
+    return <h2 className={styles.h2}>401 - Unauthorized</h2>;
   }
 
   if (error || submitError) {
-    return <h1>A network error was encountered</h1>;
+    return <h2 className={styles.h2}>A network error was encountered</h2>;
   }
 
   return (
-    <div className={styles.PostEdit}>
-      <h1>Edit</h1>
-      <form onSubmit={submitForm}>
-        <label htmlFor="title">Title:</label>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          value={form.title}
-          onChange={handleTitleChange}
-        />
-        {formError?.title && <div>{formError?.title}</div>}
+    <section className={styles.PostEdit}>
+      <h2 className={styles.h2}>Edit</h2>
+      <form className={styles.form} onSubmit={submitForm}>
+        <div className={styles.inputGroup}>
+          <label className={styles.label} htmlFor="title">
+            Title
+          </label>
+          <input
+            className={styles.input}
+            type="text"
+            id="title"
+            name="title"
+            value={form.title}
+            onChange={handleTitleChange}
+          />
+          {formError?.title && (
+            <div className={styles.inputError}>{formError?.title}</div>
+          )}
+        </div>
 
-        <label htmlFor="content">Content:</label>
-        <textarea
-          type="text"
-          id="content"
-          name="content"
-          value={form.content}
-          onChange={handleContentChange}
-        />
-        {formError?.content && <div>{formError?.content}</div>}
+        <div className={styles.textareaGroup}>
+          <label className={styles.label} htmlFor="content">
+            Content
+          </label>
+          <textarea
+            className={styles.textarea}
+            type="text"
+            id="content"
+            name="content"
+            value={form.content}
+            onChange={handleContentChange}
+          />
+          {formError?.content && (
+            <div className={styles.inputError}>{formError?.content}</div>
+          )}
+        </div>
 
-        <label>
-          Status:
+        <div className={styles.selectGroup}>
+          <label className={styles.label}>Status</label>
           <select
+            className={styles.select}
             name="status"
             value={form.published}
             onChange={handleStatusChange}
@@ -136,11 +151,15 @@ const PostEdit = () => {
             <option value="true">Published</option>
             <option value="false">Unpublished</option>
           </select>
-        </label>
+        </div>
 
-        <input type="submit" value="Submit" />
+        <input className={styles.submit} type="submit" value="Submit" />
       </form>
-    </div>
+
+      <Link to="/dashboard/posts">
+        <button className={styles.cancel}>Cancel</button>
+      </Link>
+    </section>
   );
 };
 
