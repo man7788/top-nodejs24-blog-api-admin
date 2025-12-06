@@ -1,5 +1,38 @@
 .Profile {
+  width: 1000px;
+}
+
+.h2 {
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+
+.form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.inputGroup {
+  height: fit-content;
+  height: 92px;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 0.25rem;
+}
+
+.input {
+  border-radius: 10px;
+  border: 2px solid darkgrey;
+  width: 500px;
+  min-height: 40px;
+  box-shadow: none;
+}
+
+.submit {
+  font-size: 1rem;
+  width: 100px;
+  margin-top: 2rem;
 }
