@@ -49,37 +49,45 @@ const Profile = () => {
     }
 
     setUpdate(!update);
+    setFormError({ name: 'Profile successfully updated' });
     setFormLoading(false);
   };
 
   if (loading || formLoading) {
-    return <h1>loading...</h1>;
+    return <h2 className={styles.h2}>loading...</h2>;
   }
 
   if (error?.statusCode === 401) {
-    return <h1>401 - Unauthorized</h1>;
+    return <h2 className={styles.h2}>401 - Unauthorized</h2>;
   }
 
   if (error || submitError) {
-    return <h1>A network error was encountered</h1>;
+    return <h2 className={styles.h2}>A network error was encountered</h2>;
   }
 
   return (
     <div className={styles.Profile}>
-      <h1>Profile</h1>
+      <h2 className={styles.h2}>Profile</h2>
 
       <form onSubmit={submitForm}>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={form.name}
-          onChange={handleNameChange}
-        />
-        {formError?.name && <div>{formError?.name}</div>}
+        <div className={styles.inputGroup}>
+          <label className={styles.label} htmlFor="name">
+            Name:
+          </label>
+          <input
+            className={styles.input}
+            type="text"
+            id="name"
+            name="name"
+            value={form.name}
+            onChange={handleNameChange}
+          />
+          {formError?.name && (
+            <div className={styles.inputError}>{formError?.name}</div>
+          )}
+        </div>
 
-        <input type="submit" value="Submit" />
+        <input className={styles.submit} type="submit" value="Submit" />
       </form>
     </div>
   );
