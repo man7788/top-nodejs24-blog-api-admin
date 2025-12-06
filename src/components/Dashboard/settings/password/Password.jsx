@@ -72,62 +72,88 @@ const Password = () => {
       }
     }
 
+    setForm({
+      currentPassword: '',
+      newPassword: '',
+      passwordConfirmation: '',
+    });
+    setFormError({ currentPassword: 'Password successfully updated' });
     setFormLoading(false);
   };
 
   if (loading || formLoading) {
-    return <h1>loading...</h1>;
+    return <h2 className={styles.h2}>loading...</h2>;
   }
 
   if (error?.statusCode === 401) {
-    return <h1>401 - Unauthorized</h1>;
+    return <h2 className={styles.h2}>401 - Unauthorized</h2>;
   }
 
   if (error || submitError) {
-    return <h1>A network error was encountered</h1>;
+    return <h2 className={styles.h2}>A network error was encountered</h2>;
   }
 
   return (
     <div className={styles.Password}>
-      <h1>Password</h1>
+      <h2 className={styles.h2}>Password</h2>
 
       <form onSubmit={submitForm}>
-        <label htmlFor="currentPassword">Current Password:</label>
-        <input
-          type="password"
-          id="currentPassword"
-          name="currentPassword"
-          value={form.currentPassword}
-          onChange={handleCurrentPasswordChange}
-        />
-        {formError?.currentPassword && <div>{formError?.currentPassword}</div>}
-        <br></br>
+        <div className={styles.inputGroup}>
+          <label className={styles.label} htmlFor="currentPassword">
+            Current Password:
+          </label>
+          <input
+            className={styles.input}
+            type="password"
+            id="currentPassword"
+            name="currentPassword"
+            value={form.currentPassword}
+            onChange={handleCurrentPasswordChange}
+          />
+          {formError?.currentPassword && (
+            <div className={styles.inputError}>
+              {formError?.currentPassword}
+            </div>
+          )}
+        </div>
 
-        <label htmlFor="newPasswrod">New Password:</label>
-        <input
-          type="password"
-          id="newPasswrod"
-          name="newPasswrod"
-          value={form.newPassword}
-          onChange={handleNewPasswordChange}
-        />
-        {formError?.newPassword && <div>{formError?.newPassword}</div>}
-        <br></br>
+        <div className={styles.inputGroup}>
+          <label className={styles.label} htmlFor="newPassword">
+            New Password:
+          </label>
+          <input
+            className={styles.input}
+            type="password"
+            id="newPassword"
+            name="newPassword"
+            value={form.newPassword}
+            onChange={handleNewPasswordChange}
+          />
+          {formError?.newPassword && (
+            <div className={styles.inputError}>{formError?.newPassword}</div>
+          )}
+        </div>
 
-        <label htmlFor="passwordConfirmation">Password Confirmation:</label>
-        <input
-          type="password"
-          id="passwordConfirmation"
-          name="passwordConfirmation"
-          value={form.passwordConfirmation}
-          onChange={handlePasswordConfimrationChange}
-        />
-        {formError?.passwordConfirmation && (
-          <div>{formError?.passwordConfirmation}</div>
-        )}
-        <br></br>
+        <div className={styles.inputGroup}>
+          <label className={styles.label} htmlFor="passwordConfirmation">
+            Password Confirmation:
+          </label>
+          <input
+            className={styles.input}
+            type="password"
+            id="passwordConfirmation"
+            name="passwordConfirmation"
+            value={form.passwordConfirmation}
+            onChange={handlePasswordConfimrationChange}
+          />
+          {formError?.passwordConfirmation && (
+            <div className={styles.inputError}>
+              {formError?.passwordConfirmation}
+            </div>
+          )}
+        </div>
 
-        <input type="submit" value="Submit" />
+        <input className={styles.submit} type="submit" value="Submit" />
       </form>
     </div>
   );
