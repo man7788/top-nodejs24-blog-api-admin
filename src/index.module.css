@@ -11,8 +11,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  overflow-y: scroll;
 }
 
 body {
@@ -25,4 +23,15 @@ body {
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+li {
+  list-style-type: none;
 }
