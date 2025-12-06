@@ -75,48 +75,61 @@ const Login = () => {
 
   if (loading || formLoading)
     return (
-      <main>
-        <h1 className={styles.title}>Login</h1>
-        <h2>Loading...</h2>
+      <main className={styles.Login}>
+        {' '}
+        <h1 className={styles.heading}>Blog API</h1>
+        <h2 className={styles.loading}>Loading...</h2>
       </main>
     );
 
   if (error) {
     return (
-      <main>
-        <h1 className={styles.title}>Login</h1>
-        <h2>A network error was encountered</h2>
+      <main className={styles.Login}>
+        {' '}
+        <h1 className={styles.heading}>Blog API</h1>
+        <h2 className={styles.error}>A network error was encountered</h2>
       </main>
     );
   }
 
   return (
     <main className={styles.Login}>
-      <h1>Login</h1>
+      <h1 className={styles.title}>Blog API</h1>
 
-      <form onSubmit={submitForm}>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="text"
-          id="email"
-          name="email"
-          value={form.email}
-          onChange={handleEmailChange}
-        />
-        {formError?.email && <div>{formError?.email}</div>}
+      <form className={styles.form} onSubmit={submitForm}>
+        <div className={styles.inputGroup}>
+          <label htmlFor="email">Email:</label>
+          <input
+            className={styles.input}
+            type="text"
+            id="email"
+            name="email"
+            value={form.email}
+            onChange={handleEmailChange}
+          />
+          {formError?.email && (
+            <div className={styles.errorMessage}>{formError?.email}</div>
+          )}
+        </div>
 
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={form.password}
-          onChange={handlePasswordChange}
-        />
-        {formError?.password && <div>{formError?.password}</div>}
-
-        <input type="submit" value="Submit" />
-        {formError?.generic && <div>{formError?.generic}</div>}
+        <div className={styles.inputGroup}>
+          <label htmlFor="password">Password:</label>
+          <input
+            className={styles.input}
+            type="password"
+            id="password"
+            name="password"
+            value={form.password}
+            onChange={handlePasswordChange}
+          />
+          {formError?.password && (
+            <div className={styles.errorMessage}>{formError?.password}</div>
+          )}
+          {formError?.generic && (
+            <div className={styles.errorMessage}>{formError?.generic}</div>
+          )}
+        </div>
+        <input className={styles.loginButton} type="submit" value="Log In" />
       </form>
     </main>
   );
