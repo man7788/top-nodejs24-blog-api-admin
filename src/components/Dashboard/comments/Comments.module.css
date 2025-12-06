@@ -1,5 +1,11 @@
 .Comments {
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
   align-items: center;
 }
