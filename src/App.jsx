@@ -5,7 +5,7 @@ import useAuth from './hooks/useAuth';
 function App() {
   const { user, loading } = useAuth();
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <h1 className={styles.loading}>Loading...</h1>;
 
   return (
     <div className={styles.App}>
