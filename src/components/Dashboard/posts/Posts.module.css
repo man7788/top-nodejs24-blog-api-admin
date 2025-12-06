@@ -1,5 +1,24 @@
 .Posts {
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
   align-items: center;
+}
+
+.link {
+  background-color: gray;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  margin: 0 10px;
 }
