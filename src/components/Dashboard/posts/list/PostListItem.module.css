@@ -1,5 +1,38 @@
 .PostListItem {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  border-bottom: 1px solid darkgrey;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(200px, 1fr));
+}
+
+.PostListItem:last-child {
+  border-bottom: none;
+}
+
+.p {
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.title,
+.author,
+.published,
+.link,
+.form {
+  padding: 1rem;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  width: fit-content;
+  height: fit-content;
+}
+
+.link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.submit {
+  cursor: pointer;
 }
