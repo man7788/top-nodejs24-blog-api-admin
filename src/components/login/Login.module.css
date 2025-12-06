@@ -1,6 +1,43 @@
-.Login,
-main {
+.Login {
+  min-width: 500px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.loading,
+.error {
+  display: grid;
+  justify-content: center;
+}
+
+.form {
+  border: 1px solid darkgray;
+  min-width: 400px;
+  display: grid;
+  padding: 2rem;
+}
+
+.inputGroup {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  height: 2rem;
+  margin-top: 0.5rem;
+}
+
+.errorMessage {
+  display: flex;
+  align-items: center;
+}
+
+.loginButton {
+  width: 5rem;
+  height: 2rem;
+  justify-self: end;
 }
