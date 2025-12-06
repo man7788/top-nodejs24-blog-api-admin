@@ -1,25 +1,97 @@
 import styles from './Dashboard.module.css';
-import { Outlet, Link } from 'react-router';
+import { useState, useEffect } from 'react';
+import { Outlet, Link, useLocation } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 
 const Dashboard = () => {
-  const { user, logout } = useAuth();
+  const { logout } = useAuth();
+  const location = useLocation();
+
+  const [popup, setPopup] = useState(false);
+  const [curentPage, setCurentPage] = useState('');
+
+  useEffect(() => {
+    const path = location.pathname.split('/');
+
+    if (
+      path[2] === 'settings' ||
+      path[2] === 'profile' ||
+      path[2] === 'password'
+    ) {
+      path[2] = 'settings';
+    }
+
+    if (path[2] === undefined) {
+      setCurentPage('overview');
+    } else if (path[2] === 'settings') {
+      setCurentPage('settings');
+    } else {
+      setCurentPage(path[2]);
+    }
+  }, [location.pathname]);
+
+  const showPopup = () => {
+    setPopup(!popup);
+  };
+
+  const handleBlur = (e) => {
+    console.log(e);
+    // if (!showPopup) {
+    setPopup(false);
+    // }
+  };
 
   return (
     <div className={styles.Dashboard}>
-      <h1>Dashboard</h1>
-      <aside>
-        <nav>
-          <Link to="/dashboard">Overview</Link>
-          <br></br>
-          <Link to="/dashboard/posts">Posts</Link>
-          <br></br>
-          <Link to="/dashboard/comments">Comments</Link>
-          <br></br>
-          <Link to="/dashboard/settings">Settings</Link>
-          <br></br>
-          <div>{user.name}</div>
-          <button onClick={logout}>Log Out</button>
+      <aside className={styles.aside}>
+        <h1 className={styles.h1}>Dashboard</h1>
+        <nav className={styles.nav}>
+          <Link
+            className={
+              curentPage === 'overview' ? styles.linkHightlight : styles.link
+            }
+            to="/dashboard"
+          >
+            Overview
+          </Link>
+          <Link
+            className={
+              curentPage === 'posts' ? styles.linkHightlight : styles.link
+            }
+            to="/dashboard/posts"
+          >
+            Posts
+          </Link>
+          <Link
+            className={
+              curentPage === 'comments' ? styles.linkHightlight : styles.link
+            }
+            to="/dashboard/comments"
+          >
+            Comments
+          </Link>
+          <Link
+            className={
+              curentPage === 'settings' ? styles.linkHightlight : styles.link
+            }
+            to="/dashboard/settings"
+          >
+            Settings
+          </Link>
+          {popup && (
+            <div className={styles.popup}>
+              <button className={styles.popupButton} onMouseDown={logout}>
+                Log Out
+              </button>
+            </div>
+          )}
+          <button
+            className={styles.moreButton}
+            onClick={showPopup}
+            onBlur={handleBlur}
+          >
+            More
+          </button>
         </nav>
       </aside>
       <Outlet />
