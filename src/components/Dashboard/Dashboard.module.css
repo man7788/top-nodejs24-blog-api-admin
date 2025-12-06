@@ -1,5 +1,105 @@
 .Dashboard {
+  overflow: hidden;
+  min-width: 500px;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 200px auto;
+}
+
+.h1 {
+  font-size: 1.5rem;
+  padding-left: 1rem;
+  margin-left: 10px;
+}
+
+.aside {
+  border-right: 1px solid grey;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.nav {
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(4, 50px) 1fr 50px 10px;
+}
+
+.link,
+.linkHightlight {
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
+  display: flex;
   align-items: center;
+  padding-left: 1rem;
+  margin: 0 10px;
+}
+
+.linkHightlight {
+  font-weight: bold;
+}
+
+.link:hover,
+.linkHightlight:hover {
+  background: grey;
+}
+
+.moreButton {
+  border: none;
+  border-radius: 10px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  grid-row: 6/7;
+  padding: 0;
+  padding-left: 1rem;
+  margin: 0 10px;
+  outline: inherit;
+  cursor: pointer;
+}
+
+.moreButton:hover {
+  background: grey;
+}
+
+.moreButton:focus {
+  font-weight: bold;
+}
+
+.popup {
+  background: black;
+  border-radius: 10px;
+  position: fixed;
+  height: 200px;
+  width: 200px;
+  bottom: 3rem;
+  left: 1rem;
+  display: flex;
+}
+
+.popupButton {
+  border: none;
+  border-radius: 6px; /* Outer Radius – Padding = Inner Radius */
+  background: none;
+  color: inherit;
+  font: inherit;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 1rem;
+  margin: 10px;
+  outline: inherit;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.popupButton:hover {
+  background: grey;
 }
