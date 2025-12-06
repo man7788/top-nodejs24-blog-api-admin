@@ -1,6 +1,6 @@
 import styles from './CommentEdit.module.css';
 import { useState, useEffect } from 'react';
-import { useParams, useLocation } from 'react-router';
+import { useParams, useLocation, Link } from 'react-router';
 import useEditComment from '../../../../hooks/useEditComment';
 import submitCommentUpdate from '../../../../api/submitCommentUpdate';
 
@@ -81,34 +81,44 @@ const CommentEdit = () => {
   };
 
   if (loading || formLoading) {
-    return <h1>loading...</h1>;
+    return <h2 className={styles.h2}>loading...</h2>;
   }
 
   if (error?.statusCode === 401) {
-    return <h1>401 - Unauthorized</h1>;
+    return <h2 className={styles.h2}>401 - Unauthorized</h2>;
   }
 
   if (error || submitError) {
-    return <h1>A network error was encountered</h1>;
+    return <h2 className={styles.h2}>A network error was encountered</h2>;
   }
-
+  console.log(comment);
   return (
-    <div className={styles.CommentEdit}>
-      <h1>Edit</h1>
-      <form onSubmit={submitForm}>
-        <label htmlFor="content">Content:</label>
-        <textarea
-          type="text"
-          id="content"
-          name="content"
-          value={form.content}
-          onChange={handleContentChange}
-        />
-        {formError?.content && <div>{formError?.content}</div>}
+    <section className={styles.CommentEdit}>
+      <h2 className={styles.h2}>Edit: {comment.post?.title}</h2>
+      <h3 className={styles.h3}>Author: {comment.name}</h3>
 
-        <label>
-          Status:
+      <form className={styles.form} onSubmit={submitForm}>
+        <div className={styles.textareaGroup}>
+          <label className={styles.label} htmlFor="content">
+            Content
+          </label>
+          <textarea
+            className={styles.textarea}
+            type="text"
+            id="content"
+            name="content"
+            value={form.content}
+            onChange={handleContentChange}
+          />
+          {formError?.content && (
+            <div className={styles.inputError}>{formError?.content}</div>
+          )}
+        </div>
+
+        <div className={styles.selectGroup}>
+          <label className={styles.label}>Status</label>
           <select
+            className={styles.select}
             name="status"
             value={form.published}
             onChange={handleStatusChange}
@@ -116,11 +126,14 @@ const CommentEdit = () => {
             <option value="true">Published</option>
             <option value="false">Unpublished</option>
           </select>
-        </label>
+        </div>
 
-        <input type="submit" value="Submit" />
+        <input className={styles.submit} type="submit" value="Submit" />
       </form>
-    </div>
+      <Link to="/dashboard/comments">
+        <button className={styles.cancel}>Cancel</button>
+      </Link>
+    </section>
   );
 };
 
