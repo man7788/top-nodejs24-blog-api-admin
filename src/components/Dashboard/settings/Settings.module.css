@@ -1,5 +1,48 @@
 .Settings {
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
   align-items: center;
+}
+
+.nav {
+  width: fit-content;
+  height: 42px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.link,
+.linkHighlight {
+  border-radius: 10px;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  color: inherit;
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+}
+
+.link:nth-child(n + 2),
+.linkHighlight:nth-child(n + 2) {
+  margin-left: 1rem;
+}
+
+.linkHighlight {
+  border-radius: 0;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.87);
+  font-weight: bold;
+  height: 40px;
+  padding: 0;
+  box-sizing: content-box;
 }
