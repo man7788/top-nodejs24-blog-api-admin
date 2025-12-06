@@ -3,9 +3,12 @@ import { Outlet } from 'react-router';
 
 const Comments = () => {
   return (
-    <div className={styles.Comments}>
+    <main className={styles.Comments}>
+      <section className={styles.header}>
+        <h1 className={styles.h1}>Comments</h1>
+      </section>
       <Outlet />
-    </div>
+    </main>
   );
 };
 
