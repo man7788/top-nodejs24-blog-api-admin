@@ -1,6 +1,5 @@
 import styles from './CommentList.module.css';
 import { useState } from 'react';
-import { Link } from 'react-router';
 import useComments from '../../../../hooks/useComments';
 import CommentListItem from './CommentListItem';
 
@@ -24,18 +23,30 @@ const CommentList = () => {
 
   return (
     <div className={styles.CommentList}>
-      <h1>Comments</h1>
-      <ul>
+      <div className={styles.header}>
+        <h4 className={styles.h4}>Author</h4>
+      </div>
+      <div className={styles.header}>
+        <h4 className={styles.h4}>Comment</h4>
+      </div>
+      <div className={styles.header}>
+        <h4 className={styles.h4}>In reponse to</h4>
+      </div>
+      <div className={styles.header}>
+        <h4 className={styles.h4}>Submmited on</h4>
+      </div>
+      <div className={styles.header}></div>
+      <div className={styles.header}></div>
+      <ul className={styles.ul}>
         {comments.map((comment) => (
-          <li key={comment.id}>
-            <CommentListItem
-              comment={comment}
-              setListError={setListError}
-              update={update}
-              setUpate={setUpate}
-              setListLoading={setListLoading}
-            />
-          </li>
+          <CommentListItem
+            key={comment.id}
+            comment={comment}
+            setListError={setListError}
+            update={update}
+            setUpate={setUpate}
+            setListLoading={setListLoading}
+          />
         ))}
       </ul>
     </div>
