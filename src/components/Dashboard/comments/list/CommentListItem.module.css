@@ -1,5 +1,39 @@
-.PostListItem {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.CommentListItem {
+  border-bottom: 1px solid darkgrey;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(160px, 1fr));
+}
+
+.CommentListItem:last-child {
+  border-bottom: none;
+}
+
+.p {
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.author,
+.comment,
+.post,
+.submmited,
+.link,
+.form {
+  padding: 1rem;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  width: fit-content;
+  height: fit-content;
+}
+
+.link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.submit {
+  cursor: pointer;
 }
