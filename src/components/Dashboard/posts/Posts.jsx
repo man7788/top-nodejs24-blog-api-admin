@@ -1,11 +1,33 @@
 import styles from './Posts.module.css';
-import { Outlet } from 'react-router';
+import { useState, useEffect } from 'react';
+import { Outlet, Link, useLocation } from 'react-router';
 
 const Posts = () => {
+  const [showCreate, setShowCreate] = useState(true);
+  const location = useLocation();
+
+  useEffect(() => {
+    const path = location.pathname.split('/');
+
+    if (path[3] !== undefined) {
+      setShowCreate(false);
+    } else {
+      setShowCreate(true);
+    }
+  }, [location.pathname]);
+
   return (
-    <div className={styles.Posts}>
+    <main className={styles.Posts}>
+      <section className={styles.header}>
+        <h1 className={styles.h1}>Posts</h1>
+        {showCreate && (
+          <Link className={styles.link} to="create">
+            Create
+          </Link>
+        )}
+      </section>
       <Outlet />
-    </div>
+    </main>
   );
 };
 
