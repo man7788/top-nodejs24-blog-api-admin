@@ -1,5 +1,23 @@
 .PostList {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  border: 1px solid darkgray;
+  width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(
+    5,
+    minmax(198px, 1fr)
+  ); /* Minmax should off-set border measurement */
+  grid-template-rows: 1fr auto;
+}
+
+.header {
+  padding: 1rem;
+  background-color: dimgrey;
+}
+
+.h4 {
+  margin: 0;
+}
+
+.ul {
+  grid-column: 1/6;
 }
