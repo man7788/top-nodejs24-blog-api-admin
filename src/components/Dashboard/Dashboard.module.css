@@ -1,22 +1,15 @@
 .Dashboard {
-  overflow: hidden;
-  min-width: 500px;
-  height: 100vh;
+  composes: app-height-width from global;
   display: grid;
-  grid-template-columns: 200px auto;
-}
-
-.h1 {
-  font-size: 1.5rem;
-  padding-left: 1rem;
-  margin-left: 10px;
+  grid-template-columns: 200px 1fr;
+  background: var(--primary-background-color);
 }
 
 .aside {
-  border-right: 1px solid grey;
-  max-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  composes: flex-column from global;
+  border-right: 1px solid var(--border-color-grey);
+  height: 100vh;
+  padding: 1rem;
 }
 
 .nav {
@@ -25,81 +18,84 @@
   grid-template-rows: repeat(4, 50px) 1fr 50px 10px;
 }
 
-.link,
-.linkHightlight {
+.h1 {
+  font-size: 1.5rem;
+  padding-left: 1rem;
+  margin: 1rem 0;
+}
+
+.linkStyle {
+  composes: flex-row-align-center from global;
   border-radius: 10px;
   text-decoration: none;
-  color: inherit;
+  color: var(--primary-color);
   font-size: 1rem;
-  display: flex;
-  align-items: center;
   padding-left: 1rem;
-  margin: 0 10px;
+}
+
+.link {
+  composes: linkStyle;
+}
+
+.link:hover {
+  background: var(--link-hover-bg-color-grey);
 }
 
 .linkHightlight {
+  composes: linkStyle;
   font-weight: bold;
 }
 
-.link:hover,
 .linkHightlight:hover {
-  background: grey;
+  background: var(--link-hover-bg-color-grey);
 }
 
-.moreButton {
+.more {
+  composes: flex-row-align-center from global;
   border: none;
   border-radius: 10px;
   background: none;
-  color: inherit;
+  color: var(--primary-color);
   font: inherit;
   font-size: 1rem;
-  display: flex;
-  justify-content: start;
-  align-items: center;
   grid-row: 6/7;
-  padding: 0;
   padding-left: 1rem;
-  margin: 0 10px;
-  outline: inherit;
   cursor: pointer;
 }
 
-.moreButton:hover {
-  background: grey;
+.more:hover {
+  background: var(--link-hover-bg-color-grey);
 }
 
-.moreButton:focus {
+.more:focus {
   font-weight: bold;
 }
 
 .popup {
-  background: black;
   border-radius: 10px;
+  background: var(--popup-bg-color);
   position: fixed;
   height: 200px;
   width: 200px;
-  bottom: 3rem;
+  bottom: 5rem;
   left: 1rem;
   display: flex;
 }
 
 .popupButton {
+  composes: flex-row-align-center from global;
   border: none;
   border-radius: 6px; /* Outer Radius – Padding = Inner Radius */
   background: none;
-  color: inherit;
+  color: var(--primary-color);
   font: inherit;
   height: 50px;
   width: 100%;
-  display: flex;
-  align-items: center;
   padding: 0 0 0 1rem;
   margin: 10px;
-  outline: inherit;
   cursor: pointer;
-  z-index: 5;
 }
 
 .popupButton:hover {
-  background: grey;
+  background: var(--link-hover-bg-color-grey);
 }
