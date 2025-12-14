@@ -31,20 +31,14 @@ const PostListItem = ({
 
   return (
     <li className={styles.PostListItem}>
-      <div className={styles.title}>
-        <p className={styles.p}>{post.title}</p>
-      </div>
-      <div className={styles.author}>
-        <p className={styles.p}>{post.author.name}</p>
-      </div>
+      <div className={styles.title}>{post.title}</div>
+      <div className={styles.author}>{post.author.name}</div>
       <div className={styles.published}>{formattedDate}</div>
-
       <Link className={styles.link} to={`${post.id}/edit`}>
         Edit
       </Link>
-
       <form className={styles.form} onSubmit={submitDelete}>
-        <input type="submit" value="Delete" />
+        <input className={styles.submit} type="submit" value="Delete" />
       </form>
     </li>
   );
