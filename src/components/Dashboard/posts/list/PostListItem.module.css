@@ -1,38 +1,48 @@
 .PostListItem {
-  border-bottom: 1px solid darkgrey;
+  border-bottom: 1px solid var(--border-color-grey);
   display: grid;
-  grid-template-columns: repeat(5, minmax(200px, 1fr));
+  grid-template-columns: repeat(5, minmax(100px, 1fr));
 }
 
 .PostListItem:last-child {
   border-bottom: none;
 }
 
-.p {
-  word-wrap: break-word;
-  margin: 0;
+.tableCellStyle {
+  font-size: 1rem;
+  padding: 1rem;
 }
 
-.title,
-.author,
-.published,
-.link,
+.title {
+  composes: tableCellStyle;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.author {
+  composes: tableCellStyle;
+}
+
+.published {
+  composes: tableCellStyle;
+}
+
+.link {
+  composes: tableCellStyle;
+}
+
 .form {
-  padding: 1rem;
+  composes: tableCellStyle;
 }
 
 .link {
   text-decoration: none;
-  color: inherit;
+  color: var(--primary-color);
   width: fit-content;
   height: fit-content;
-}
-
-.link:hover {
-  color: white;
-  text-decoration: underline;
+  cursor: pointer;
 }
 
 .submit {
-  cursor: pointer;
+  font-size: 1rem;
 }
