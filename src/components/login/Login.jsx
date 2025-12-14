@@ -76,29 +76,28 @@ const Login = () => {
   if (loading || formLoading)
     return (
       <main className={styles.Login}>
-        {' '}
-        <h1 className={styles.heading}>Blog API</h1>
-        <h2 className={styles.loading}>Loading...</h2>
+        <h1 className={styles.altHeader}>Blog API</h1>
+        <div className={styles.altMessage}>Loading...</div>
       </main>
     );
 
   if (error) {
     return (
       <main className={styles.Login}>
-        {' '}
-        <h1 className={styles.heading}>Blog API</h1>
-        <h2 className={styles.error}>A network error was encountered</h2>
+        <h1 className={styles.altHeader}>Blog API</h1>
+        <div className={styles.altMessage}>A network error was encountered</div>
       </main>
     );
   }
 
   return (
     <main className={styles.Login}>
-      <h1 className={styles.title}>Blog API</h1>
-
+      <h1 className={styles.header}>Blog API</h1>
       <form className={styles.form} onSubmit={submitForm}>
         <div className={styles.inputGroup}>
-          <label htmlFor="email">Email:</label>
+          <label className={styles.label} htmlFor="email">
+            Email:
+          </label>
           <input
             className={styles.input}
             type="text"
@@ -111,9 +110,10 @@ const Login = () => {
             <div className={styles.errorMessage}>{formError?.email}</div>
           )}
         </div>
-
         <div className={styles.inputGroup}>
-          <label htmlFor="password">Password:</label>
+          <label className={styles.label} htmlFor="password">
+            Password:
+          </label>
           <input
             className={styles.input}
             type="password"
@@ -129,7 +129,7 @@ const Login = () => {
             <div className={styles.errorMessage}>{formError?.generic}</div>
           )}
         </div>
-        <input className={styles.loginButton} type="submit" value="Log In" />
+        <input className={styles.submit} type="submit" value="Log In" />
       </form>
     </main>
   );
