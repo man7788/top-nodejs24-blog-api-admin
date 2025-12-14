@@ -1,43 +1,58 @@
 .Login {
-  min-width: 500px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  composes:
+    app-height-width from global,
+    flex-column-align-center from global;
+  padding: 2rem;
 }
 
-.loading,
-.error {
-  display: grid;
-  justify-content: center;
+.altHeader {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+}
+
+.altMessage {
+  font-size: 1rem;
+}
+
+.header {
+  font-size: 2rem;
 }
 
 .form {
-  border: 1px solid darkgray;
+  composes: flex-column from global;
+  border-radius: 5px;
+  border: 1px solid var(--border-color-grey);
   min-width: 400px;
-  display: grid;
   padding: 2rem;
 }
 
 .inputGroup {
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 0.5rem;
+  composes: flex-column from global;
+  height: 92px;
+  margin-bottom: 1rem;
+}
+
+.label {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.inputStyle {
+  border-radius: 10px;
+  border: 1px solid var(--border-color-grey);
+  font-size: 1rem;
+  padding: 1rem;
 }
 
 .input {
-  height: 2rem;
-  margin-top: 0.5rem;
+  composes: inputStyle;
+  min-height: 40px;
+  font-size: 1rem;
 }
 
-.errorMessage {
-  display: flex;
-  align-items: center;
-}
-
-.loginButton {
+.submit {
   width: 5rem;
   height: 2rem;
-  justify-self: end;
+  font-size: 1rem;
+  align-self: end;
 }
