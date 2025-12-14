@@ -1,0 +1,53 @@
+:root {
+  --primary-color: rgba(255, 255, 255, 0.87);
+  --primary-background-color: #242424;
+
+  --border-color-grey: grey;
+
+  --link-hover-bg-color-grey: grey;
+  --link-hover-bg-color-white: white;
+  --link-bg-color-grey: grey;
+
+  --popup-bg-color: black;
+
+  --table-header-bg-color-grey: grey;
+}
+
+:global(.app-height-width) {
+  min-width: 500px;
+  height: 100vh;
+}
+
+:global(.flex-column) {
+  display: flex;
+  flex-direction: column;
+}
+
+:global(.flex-column-center) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+:global(.flex-column-align-center) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+:global(.flex-row-center) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:global(.flex-row-justify-center) {
+  display: flex;
+  justify-content: center;
+}
+
+:global(.flex-row-align-center) {
+  display: flex;
+  align-items: center;
+}
