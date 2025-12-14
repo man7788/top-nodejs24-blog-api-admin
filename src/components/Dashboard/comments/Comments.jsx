@@ -1,12 +1,26 @@
 import styles from './Comments.module.css';
-import { Outlet } from 'react-router';
+import { useState, useEffect } from 'react';
+import { useLocation, Outlet } from 'react-router';
 
 const Comments = () => {
+  const [edit, setEdit] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const path = location.pathname.split('/');
+
+    if (path[4] === undefined) {
+      setEdit(false);
+    } else {
+      setEdit(true);
+    }
+  }, [location.pathname]);
+
   return (
-    <main className={styles.Comments}>
-      <section className={styles.header}>
+    <main className={edit ? styles.CommentsEdit : styles.Comments}>
+      <header className={styles.header}>
         <h1 className={styles.h1}>Comments</h1>
-      </section>
+      </header>
       <Outlet />
     </main>
   );
