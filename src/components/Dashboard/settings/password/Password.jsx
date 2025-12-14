@@ -95,8 +95,6 @@ const Password = () => {
 
   return (
     <div className={styles.Password}>
-      <h2 className={styles.h2}>Password</h2>
-
       <form onSubmit={submitForm}>
         <div className={styles.inputGroup}>
           <label className={styles.label} htmlFor="currentPassword">
@@ -116,7 +114,6 @@ const Password = () => {
             </div>
           )}
         </div>
-
         <div className={styles.inputGroup}>
           <label className={styles.label} htmlFor="newPassword">
             New Password:
@@ -133,7 +130,6 @@ const Password = () => {
             <div className={styles.inputError}>{formError?.newPassword}</div>
           )}
         </div>
-
         <div className={styles.inputGroup}>
           <label className={styles.label} htmlFor="passwordConfirmation">
             Password Confirmation:
@@ -152,8 +148,9 @@ const Password = () => {
             </div>
           )}
         </div>
-
-        <input className={styles.submit} type="submit" value="Submit" />
+        <div className={styles.buttonContainer}>
+          <input className={styles.submit} type="submit" value="Submit" />
+        </div>
       </form>
     </div>
   );
