@@ -1,71 +1,97 @@
 .PostCreate {
-  width: 1000px;
+  composes: flex-column-align-center from global;
+  border: 1px solid orange;
+  width: 100%;
+  padding: 0 1rem 0 1rem;
+}
+
+.header {
+  width: 100%;
 }
 
 .h2 {
   font-size: 1.2rem;
-  margin-top: 0;
+  margin: 0 0 1rem 0;
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
+  composes: flex-column from global;
 }
 
 .inputGroup {
-  height: fit-content;
+  composes: flex-column from global;
   height: 92px;
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 1rem;
 }
 
 .label {
+  min-width: 500px;
+  font-size: 1rem;
   margin-bottom: 0.25rem;
 }
 
-.input {
+.inputStyle {
   border-radius: 10px;
-  border: 2px solid darkgrey;
-  width: 500px;
-  min-height: 40px;
-  box-shadow: none;
+  border: 1px solid var(--border-color-grey);
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.input {
+  composes: inputStyle;
+  min-width: 500px;
+  height: 40px;
+  font-size: 1rem;
 }
 
 .textareaGroup {
+  composes: flex-column from global;
   height: 452px;
-  display: flex;
-  flex-direction: column;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .textarea {
-  border-radius: 10px;
-  border: 2px solid darkgrey;
-  width: 800px;
-  min-height: 400px;
+  composes: inputStyle;
+  min-width: 500px;
+  height: 400px;
+  font-size: 1rem;
+  resize: none;
 }
 
 .selectGroup {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1rem;
+  composes: flex-column from global;
+}
+
+.selectContainer {
+  min-width: 500px;
 }
 
 .select {
-  font-size: 1rem;
   width: fit-content;
-  display: flex;
-  flex-direction: column;
+  font-size: 1rem;
+  padding: 0.25rem;
+}
+
+.buttonContainer {
+  composes: flex-column from global;
+  min-width: 500px;
+}
+
+.formButtonStyle {
+  width: 100px;
+  font-size: 1rem;
 }
 
 .submit {
-  font-size: 1rem;
-  width: 100px;
+  composes: formButtonStyle;
   margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .cancel {
+  composes: formButtonStyle;
+}
+
+.inputError {
   font-size: 1rem;
-  width: 100px;
-  margin-top: 1rem;
 }
