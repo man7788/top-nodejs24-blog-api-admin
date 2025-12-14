@@ -18,14 +18,14 @@ const Posts = () => {
 
   return (
     <main className={styles.Posts}>
-      <section className={styles.header}>
+      <div className={styles.header}>
         <h1 className={styles.h1}>Posts</h1>
         {showCreate && (
           <Link className={styles.link} to="create">
             Create
           </Link>
         )}
-      </section>
+      </div>
       <Outlet />
     </main>
   );
