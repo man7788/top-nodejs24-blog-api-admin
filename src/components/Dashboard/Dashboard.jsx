@@ -34,11 +34,8 @@ const Dashboard = () => {
     setPopup(!popup);
   };
 
-  const handleBlur = (e) => {
-    console.log(e);
-    // if (!showPopup) {
+  const handleBlur = () => {
     setPopup(false);
-    // }
   };
 
   return (
@@ -86,7 +83,7 @@ const Dashboard = () => {
             </div>
           )}
           <button
-            className={styles.moreButton}
+            className={styles.more}
             onClick={showPopup}
             onBlur={handleBlur}
           >
