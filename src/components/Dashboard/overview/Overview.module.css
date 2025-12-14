@@ -1,38 +1,35 @@
 .Overview {
+  composes: flex-column-align-center from global;
+  max-width: 100%;
   overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
   padding: 1rem;
+}
+
+.altMessage {
+  font-size: 1rem;
 }
 
 .header {
-  display: flex;
-  align-items: center;
-}
-
-.h1 {
+  width: 100%;
   font-size: 1.5rem;
-  padding: 1rem;
+  padding-left: 1rem;
+  margin: 1rem 0 2rem 0;
 }
 
-.Overview .h1 {
-  padding: 0;
-}
-
-.section {
-  border: 1px solid gray;
-  width: 400px;
-  display: flex;
-  flex-direction: column;
+.article {
+  composes: flex-column from global;
+  border-radius: 5px;
+  border: 1px solid var(--border-color-grey);
+  width: min(calc(100% - 2rem), 400px);
 }
 
 .h2 {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid var(--border-color-grey);
   font-size: 1rem;
-  padding: 0.5rem;
+  padding: 1rem;
   margin: 0;
 }
 
-.p {
-  padding-left: 1rem;
+.statistics {
+  padding: 1rem;
 }
