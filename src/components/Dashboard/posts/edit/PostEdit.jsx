@@ -91,20 +91,24 @@ const PostEdit = () => {
   };
 
   if (loading || formLoading) {
-    return <h2 className={styles.h2}>loading...</h2>;
+    return <div className={styles.altMessage}>loading...</div>;
   }
 
   if (error?.statusCode === 401) {
-    return <h2 className={styles.h2}>401 - Unauthorized</h2>;
+    return <div className={styles.altMessage}>401 - Unauthorized</div>;
   }
 
   if (error || submitError) {
-    return <h2 className={styles.h2}>A network error was encountered</h2>;
+    return (
+      <div className={styles.altMessage}>A network error was encountered</div>
+    );
   }
 
   return (
     <section className={styles.PostEdit}>
-      <h2 className={styles.h2}>Edit</h2>
+      <div className={styles.header}>
+        <h2 className={styles.h2}>Create</h2>
+      </div>
       <form className={styles.form} onSubmit={submitForm}>
         <div className={styles.inputGroup}>
           <label className={styles.label} htmlFor="title">
@@ -122,7 +126,6 @@ const PostEdit = () => {
             <div className={styles.inputError}>{formError?.title}</div>
           )}
         </div>
-
         <div className={styles.textareaGroup}>
           <label className={styles.label} htmlFor="content">
             Content
@@ -139,26 +142,29 @@ const PostEdit = () => {
             <div className={styles.inputError}>{formError?.content}</div>
           )}
         </div>
-
         <div className={styles.selectGroup}>
           <label className={styles.label}>Status</label>
-          <select
-            className={styles.select}
-            name="status"
-            value={form.published}
-            onChange={handleStatusChange}
-          >
-            <option value="true">Published</option>
-            <option value="false">Unpublished</option>
-          </select>
+          <div className={styles.selectContainer}>
+            <select
+              className={styles.select}
+              name="status"
+              value={form.published}
+              onChange={handleStatusChange}
+            >
+              <option value="true">Published</option>
+              <option value="false">Unpublished</option>
+            </select>
+          </div>
         </div>
-
-        <input className={styles.submit} type="submit" value="Submit" />
+        <div className={styles.buttonContainer}>
+          <input className={styles.submit} type="submit" value="Submit" />
+        </div>
       </form>
-
-      <Link to="/dashboard/posts">
-        <button className={styles.cancel}>Cancel</button>
-      </Link>
+      <div className={styles.buttonContainer}>
+        <Link to="/dashboard/posts">
+          <button className={styles.cancel}>Cancel</button>
+        </Link>
+      </div>
     </section>
   );
 };
