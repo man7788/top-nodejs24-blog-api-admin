@@ -10,27 +10,29 @@ const PostList = () => {
   const [listLoading, setListLoading] = useState(null);
 
   if (loading || listLoading) {
-    return <h1>loading...</h1>;
+    return <div className={styles.altMessage}>loading...</div>;
   }
 
   if (error?.statusCode === 401 || listError?.statusCode === 401) {
-    return <h1>401 - Unauthorized</h1>;
+    return <div className={styles.altMessage}>401 - Unauthorized</div>;
   }
 
   if (error || listError) {
-    return <h1>A network error was encountered</h1>;
+    return (
+      <div className={styles.altMessage}>A network error was encountered</div>
+    );
   }
 
   return (
     <div className={styles.PostList}>
       <div className={styles.header}>
-        <h4 className={styles.h4}>Title</h4>
+        <h2 className={styles.h2}>Title</h2>
       </div>
       <div className={styles.header}>
-        <h4 className={styles.h4}>Author</h4>
+        <h2 className={styles.h2}>Author</h2>
       </div>
       <div className={styles.header}>
-        <h4 className={styles.h4}>Published</h4>
+        <h2 className={styles.h2}>Published</h2>
       </div>
       <div className={styles.header}></div>
       <div className={styles.header}></div>
