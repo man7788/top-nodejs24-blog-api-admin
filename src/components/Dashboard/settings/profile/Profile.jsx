@@ -67,8 +67,6 @@ const Profile = () => {
 
   return (
     <div className={styles.Profile}>
-      <h2 className={styles.h2}>Profile</h2>
-
       <form onSubmit={submitForm}>
         <div className={styles.inputGroup}>
           <label className={styles.label} htmlFor="name">
@@ -86,8 +84,9 @@ const Profile = () => {
             <div className={styles.inputError}>{formError?.name}</div>
           )}
         </div>
-
-        <input className={styles.submit} type="submit" value="Submit" />
+        <div className={styles.buttonContainer}>
+          <input className={styles.submit} type="submit" value="Submit" />
+        </div>
       </form>
     </div>
   );
