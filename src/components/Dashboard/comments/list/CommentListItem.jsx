@@ -41,7 +41,7 @@ const CommentListItem = ({
       <div className={styles.post}>
         <p className={styles.p}>{comment.post.title}</p>
       </div>
-      <div className={styles.submmited}>{formattedDate}</div>
+      <div className={styles.submitted}>{formattedDate}</div>
       <Link
         className={styles.link}
         to={`${comment.id}/edit`}
