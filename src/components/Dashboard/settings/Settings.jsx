@@ -18,9 +18,9 @@ const Settings = () => {
 
   return (
     <main className={styles.Settings}>
-      <section className={styles.header}>
-        <h1>Settings</h1>
-      </section>
+      <header className={styles.header}>
+        <h1 className={styles.h1}>Settings</h1>
+      </header>
       <nav className={styles.nav}>
         <Link
           className={
