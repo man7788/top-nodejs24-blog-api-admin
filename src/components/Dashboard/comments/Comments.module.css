@@ -1,11 +1,32 @@
-.Comments {
+.CommentsStyle {
   overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
+  padding: 1rem 1rem 2rem 1rem;
+}
+
+.Comments {
+  composes:
+    flex-column-align-center from global,
+    CommentsStyle;
+  /* Width should at least off-set scroll bar width to prevent overflow */
+  min-width: calc(960px + 4rem);
+}
+
+.CommentsEdit {
+  composes:
+    flex-column-align-center from global,
+    CommentsStyle;
+  /* Width should at least off-set scroll bar width to prevent overflow */
+  min-width: calc(500px + 5rem);
 }
 
 .header {
-  display: flex;
-  align-items: center;
+  composes: flex-row-align-center from global;
+  width: 100%;
+  padding-left: 1rem;
+  margin: 1rem 0 2rem 0;
+}
+
+.h1 {
+  font-size: 1.5rem;
+  margin: 0;
 }
