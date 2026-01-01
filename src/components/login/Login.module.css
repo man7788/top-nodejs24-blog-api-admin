@@ -1,34 +1,26 @@
 .Login {
-  composes:
-    app-height-width from global,
-    flex-column-align-center from global;
-  padding: 2rem;
-}
-
-.altHeader {
-  font-size: 2rem;
-  margin: 0 0 1rem 0;
-}
-
-.altMessage {
-  font-size: 1rem;
+  composes: fs-container from global;
 }
 
 .header {
-  font-size: 2rem;
+  composes: fs-header from global;
+}
+
+.message {
+  composes: fs-message from global;
 }
 
 .form {
   composes: flex-column from global;
-  border-radius: 5px;
-  border: 1px solid var(--border-color-grey);
-  min-width: 400px;
+  border-radius: 10px;
+  border: 1px solid var(--border-gray);
+  min-width: 25rem;
   padding: 2rem;
 }
 
 .inputGroup {
   composes: flex-column from global;
-  height: 92px;
+  height: 5.75rem;
   margin-bottom: 1rem;
 }
 
@@ -37,22 +29,33 @@
   margin-bottom: 0.25rem;
 }
 
-.inputStyle {
+.input-style {
   border-radius: 10px;
-  border: 1px solid var(--border-color-grey);
+  border: 1px solid var(--border-gray);
   font-size: 1rem;
   padding: 1rem;
 }
 
 .input {
-  composes: inputStyle;
-  min-height: 40px;
+  composes: input-style;
+  height: 2.5rem;
+}
+
+.inputError {
   font-size: 1rem;
 }
 
 .submit {
+  composes: button from global;
   width: 5rem;
   height: 2rem;
-  font-size: 1rem;
   align-self: end;
+}
+
+.submit:hover {
+  background-color: var(--btn-hover-bg-darkgray);
+}
+
+.submit:active {
+  background-color: var(--btn-active-bg-dimgray);
 }
