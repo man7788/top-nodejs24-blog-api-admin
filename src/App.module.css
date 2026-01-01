@@ -1,9 +1,11 @@
 .App {
-  min-width: 500px;
-  height: 100vh;
+  composes: fs-container from global;
 }
 
-.loading {
-  display: grid;
-  justify-content: center;
+.header {
+  composes: fs-header from global;
+}
+
+.message {
+  composes: fs-message from global;
 }
