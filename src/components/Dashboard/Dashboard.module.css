@@ -1,35 +1,37 @@
 .Dashboard {
   composes: app-height-width from global;
+  background: var(--bg-primary);
   display: grid;
-  grid-template-columns: 200px 1fr;
-  background: var(--primary-background-color);
+  grid-template-columns: 1fr 5fr;
 }
 
 .aside {
   composes: flex-column from global;
-  border-right: 1px solid var(--border-color-grey);
+  border-right: 1px solid var(--border-gray);
   height: 100vh;
   padding: 1rem;
+}
+
+.header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
 }
 
 .nav {
   height: 100%;
   display: grid;
-  grid-template-rows: repeat(4, 50px) 1fr 50px 10px;
-}
-
-.h1 {
-  font-size: 1.5rem;
-  padding-left: 1rem;
-  margin: 1rem 0;
+  grid-template-rows: repeat(4, 0.1fr) 1fr 0.1fr;
+  align-items: center;
 }
 
 .linkStyle {
-  composes: flex-row-align-center from global;
+  composes: flex-row-align from global;
   border-radius: 10px;
-  text-decoration: none;
   color: var(--primary-color);
   font-size: 1rem;
+  height: 90%;
   padding-left: 1rem;
 }
 
@@ -38,64 +40,54 @@
 }
 
 .link:hover {
-  background: var(--link-hover-bg-color-grey);
+  background: var(--link-hover-bg-gray);
+}
+
+.linkHightlight:hover {
+  background: var(--link-hover-bg-gray);
 }
 
 .linkHightlight {
   composes: linkStyle;
-  font-weight: bold;
-}
-
-.linkHightlight:hover {
-  background: var(--link-hover-bg-color-grey);
+  font-weight: 700;
 }
 
 .more {
-  composes: flex-row-align-center from global;
-  border: none;
-  border-radius: 10px;
-  background: none;
-  color: var(--primary-color);
-  font: inherit;
-  font-size: 1rem;
+  composes: linkStyle;
+  background-color: transparent;
   grid-row: 6/7;
-  padding-left: 1rem;
   cursor: pointer;
 }
 
 .more:hover {
-  background: var(--link-hover-bg-color-grey);
+  background: var(--link-hover-bg-gray);
 }
 
 .more:focus {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .popup {
+  composes: flex-column from global;
   border-radius: 10px;
-  background: var(--popup-bg-color);
+  background: var(--popup-bg-black);
   position: fixed;
-  height: 200px;
-  width: 200px;
+  height: 12.5rem;
+  width: 12.5rem;
   bottom: 5rem;
   left: 1rem;
-  display: flex;
+  padding: 0.75rem;
 }
 
 .popupButton {
-  composes: flex-row-align-center from global;
-  border: none;
-  border-radius: 6px; /* Outer Radius – Padding = Inner Radius */
-  background: none;
+  composes: linkStyle;
+  border-radius: 5px; /* Outer Radius/2 = Inner Radius */
   color: var(--primary-color);
-  font: inherit;
-  height: 50px;
+  height: 3.125rem;
   width: 100%;
-  padding: 0 0 0 1rem;
-  margin: 10px;
   cursor: pointer;
 }
 
 .popupButton:hover {
-  background: var(--link-hover-bg-color-grey);
+  background: var(--link-hover-bg-gray);
 }
