@@ -19,10 +19,10 @@ const Posts = () => {
   return (
     <main className={styles.Posts}>
       <div className={styles.header}>
-        <h1 className={styles.h1}>Posts</h1>
+        <h1>Posts</h1>
         {showCreate && (
-          <Link className={styles.link} to="create">
-            Create
+          <Link to="create">
+            <button className={styles.create}>Create</button>
           </Link>
         )}
       </div>
