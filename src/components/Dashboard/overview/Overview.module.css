@@ -1,35 +1,28 @@
 .Overview {
-  composes: flex-column-align-center from global;
-  max-width: 100%;
-  overflow-y: scroll;
-  padding: 1rem;
-}
-
-.altMessage {
-  font-size: 1rem;
+  composes: ss-container from global;
 }
 
 .header {
-  width: 100%;
-  font-size: 1.5rem;
-  padding-left: 1rem;
-  margin: 1rem 0 2rem 0;
+  composes: ss-header from global;
 }
 
-.article {
+.message {
+  composes: ss-message from global;
+}
+
+.card {
   composes: flex-column from global;
   border-radius: 5px;
-  border: 1px solid var(--border-color-grey);
+  border: 1px solid var(--border-gray);
   width: min(calc(100% - 2rem), 400px);
 }
 
-.h2 {
-  border-bottom: 1px solid var(--border-color-grey);
+.infoHeader {
+  border-bottom: 1px solid var(--border-gray);
   font-size: 1rem;
   padding: 1rem;
-  margin: 0;
 }
 
-.statistics {
+.infoMessage {
   padding: 1rem;
 }
