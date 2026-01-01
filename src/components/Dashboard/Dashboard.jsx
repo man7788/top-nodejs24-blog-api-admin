@@ -41,7 +41,7 @@ const Dashboard = () => {
   return (
     <div className={styles.Dashboard}>
       <aside className={styles.aside}>
-        <h1 className={styles.h1}>Dashboard</h1>
+        <h1 className={styles.header}>Dashboard</h1>
         <nav className={styles.nav}>
           <Link
             className={
