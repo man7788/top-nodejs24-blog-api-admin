@@ -82,23 +82,23 @@ const Password = () => {
   };
 
   if (loading || formLoading) {
-    return <h2 className={styles.h2}>loading...</h2>;
+    return <h2 className={styles.message}>Loading...</h2>;
   }
 
   if (error?.statusCode === 401) {
-    return <h2 className={styles.h2}>401 - Unauthorized</h2>;
+    return <h2 className={styles.message}>401 - Unauthorized</h2>;
   }
 
   if (error || submitError) {
-    return <h2 className={styles.h2}>A network error was encountered</h2>;
+    return <h2 className={styles.message}>A network error was encountered</h2>;
   }
 
   return (
     <div className={styles.Password}>
-      <form onSubmit={submitForm}>
+      <form className={styles.form} onSubmit={submitForm}>
         <div className={styles.inputGroup}>
           <label className={styles.label} htmlFor="currentPassword">
-            Current Password:
+            Current Password
           </label>
           <input
             className={styles.input}
@@ -116,7 +116,7 @@ const Password = () => {
         </div>
         <div className={styles.inputGroup}>
           <label className={styles.label} htmlFor="newPassword">
-            New Password:
+            New Password
           </label>
           <input
             className={styles.input}
@@ -132,7 +132,7 @@ const Password = () => {
         </div>
         <div className={styles.inputGroup}>
           <label className={styles.label} htmlFor="passwordConfirmation">
-            Password Confirmation:
+            Password Confirmation
           </label>
           <input
             className={styles.input}
