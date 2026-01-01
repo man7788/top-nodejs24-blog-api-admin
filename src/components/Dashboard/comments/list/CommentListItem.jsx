@@ -43,14 +43,14 @@ const CommentListItem = ({
       </div>
       <div className={styles.submitted}>{formattedDate}</div>
       <Link
-        className={styles.link}
+        className={styles.edit}
         to={`${comment.id}/edit`}
         state={{ postId: comment.postId }}
       >
         Edit
       </Link>
       <form className={styles.form} onSubmit={submitDelete}>
-        <input type="submit" value="Delete" />
+        <input className={styles.delete} type="submit" value="Delete" />
       </form>
     </li>
   );
