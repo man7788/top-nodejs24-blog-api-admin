@@ -1,7 +1,7 @@
 .CommentListItem {
-  border-bottom: 1px solid var(--border-color-grey);
+  border-bottom: 1px solid var(--border-gray);
   display: grid;
-  grid-template-columns: repeat(6, minmax(160px, 1fr));
+  grid-template-columns: repeat(6, minmax(10rem, 1fr));
 }
 
 .CommentListItem:last-child {
@@ -10,7 +10,6 @@
 
 .p {
   word-wrap: break-word;
-  margin: 0;
 }
 
 .tableCellStyle {
@@ -38,21 +37,32 @@
   composes: tableCellStyle;
 }
 
-.link {
+.edit {
   composes: tableCellStyle;
+  color: var(--primary-color);
+  font-weight: 700;
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+}
+
+.edit:hover {
+  text-decoration: underline;
 }
 
 .form {
   composes: tableCellStyle;
 }
 
-.link {
-  text-decoration: none;
-  color: inherit;
-  width: fit-content;
-  height: fit-content;
+.delete {
+  composes: button from global;
+  background-color: var(--btn-bg-firebrick);
 }
 
-.submit {
-  font-size: 1rem;
+.delete:hover {
+  background-color: var(--btn-hover-bg-crimson);
+}
+
+.delete:active {
+  background-color: var(--btn-active-bg-maroon);
 }
