@@ -29,7 +29,7 @@
 
 .edit {
   composes: tableCellStyle;
-  color: var(--primary-color);
+  color: var(--text-primary);
   font-weight: 700;
   width: fit-content;
   height: fit-content;

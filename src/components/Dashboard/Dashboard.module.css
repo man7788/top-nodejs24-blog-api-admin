@@ -29,7 +29,7 @@
 .linkStyle {
   composes: flex-row-align from global;
   border-radius: 10px;
-  color: var(--primary-color);
+  color: var(--text-primary);
   font-size: 1rem;
   height: 90%;
   padding-left: 1rem;
@@ -82,7 +82,7 @@
 .popupButton {
   composes: linkStyle;
   border-radius: 5px; /* Outer Radius/2 = Inner Radius */
-  color: var(--primary-color);
+  color: var(--text-primary);
   height: 3.125rem;
   width: 100%;
   cursor: pointer;
