@@ -1,7 +1,7 @@
 .PostListItem {
-  border-bottom: 1px solid var(--border-color-grey);
   display: grid;
-  grid-template-columns: repeat(5, minmax(100px, 1fr));
+  grid-template-columns: repeat(5, minmax(6.25rem, 1fr));
+  border-bottom: 1px solid var(--border-gray);
 }
 
 .PostListItem:last-child {
@@ -15,7 +15,7 @@
 
 .title {
   composes: tableCellStyle;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
   hyphens: auto;
 }
 
@@ -27,22 +27,32 @@
   composes: tableCellStyle;
 }
 
-.link {
+.edit {
   composes: tableCellStyle;
+  color: var(--primary-color);
+  font-weight: 700;
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+}
+
+.edit:hover {
+  text-decoration: underline;
 }
 
 .form {
   composes: tableCellStyle;
 }
 
-.link {
-  text-decoration: none;
-  color: var(--primary-color);
-  width: fit-content;
-  height: fit-content;
-  cursor: pointer;
+.delete {
+  composes: button from global;
+  background-color: var(--btn-bg-firebrick);
 }
 
-.submit {
-  font-size: 1rem;
+.delete:hover {
+  background-color: var(--btn-hover-bg-crimson);
+}
+
+.delete:active {
+  background-color: var(--btn-active-bg-maroon);
 }
