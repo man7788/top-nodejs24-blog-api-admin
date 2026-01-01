@@ -34,11 +34,11 @@ const PostListItem = ({
       <div className={styles.title}>{post.title}</div>
       <div className={styles.author}>{post.author.name}</div>
       <div className={styles.published}>{formattedDate}</div>
-      <Link className={styles.link} to={`${post.id}/edit`}>
+      <Link className={styles.edit} to={`${post.id}/edit`}>
         Edit
       </Link>
       <form className={styles.form} onSubmit={submitDelete}>
-        <input className={styles.submit} type="submit" value="Delete" />
+        <input className={styles.delete} type="submit" value="Delete" />
       </form>
     </li>
   );
