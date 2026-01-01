@@ -91,23 +91,23 @@ const PostEdit = () => {
   };
 
   if (loading || formLoading) {
-    return <div className={styles.altMessage}>loading...</div>;
+    return <div className={styles.message}>Loading...</div>;
   }
 
   if (error?.statusCode === 401) {
-    return <div className={styles.altMessage}>401 - Unauthorized</div>;
+    return <div className={styles.message}>401 - Unauthorized</div>;
   }
 
   if (error || submitError) {
     return (
-      <div className={styles.altMessage}>A network error was encountered</div>
+      <div className={styles.message}>A network error was encountered</div>
     );
   }
 
   return (
     <section className={styles.PostEdit}>
       <div className={styles.header}>
-        <h2 className={styles.h2}>Create</h2>
+        <h2>Edit</h2>
       </div>
       <form className={styles.form} onSubmit={submitForm}>
         <div className={styles.inputGroup}>
@@ -144,27 +144,26 @@ const PostEdit = () => {
         </div>
         <div className={styles.selectGroup}>
           <label className={styles.label}>Status</label>
-          <div className={styles.selectContainer}>
-            <select
-              className={styles.select}
-              name="status"
-              value={form.published}
-              onChange={handleStatusChange}
-            >
-              <option value="true">Published</option>
-              <option value="false">Unpublished</option>
-            </select>
-          </div>
+
+          <select
+            className={styles.select}
+            name="status"
+            value={form.published}
+            onChange={handleStatusChange}
+          >
+            <option value="true">Published</option>
+            <option value="false">Unpublished</option>
+          </select>
         </div>
         <div className={styles.buttonContainer}>
           <input className={styles.submit} type="submit" value="Submit" />
         </div>
+        <div className={styles.buttonContainer}>
+          <Link to="/dashboard/posts">
+            <button className={styles.cancel}>Cancel</button>
+          </Link>
+        </div>
       </form>
-      <div className={styles.buttonContainer}>
-        <Link to="/dashboard/posts">
-          <button className={styles.cancel}>Cancel</button>
-        </Link>
-      </div>
     </section>
   );
 };
