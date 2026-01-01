@@ -19,7 +19,7 @@ const Comments = () => {
   return (
     <main className={edit ? styles.CommentsEdit : styles.Comments}>
       <header className={styles.header}>
-        <h1 className={styles.h1}>Comments</h1>
+        <h1>Comments</h1>
       </header>
       <Outlet />
     </main>
