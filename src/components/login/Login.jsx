@@ -76,16 +76,16 @@ const Login = () => {
   if (loading || formLoading)
     return (
       <main className={styles.Login}>
-        <h1 className={styles.altHeader}>Blog API</h1>
-        <div className={styles.altMessage}>Loading...</div>
+        <h1 className={styles.header}>Blog API</h1>
+        <div className={styles.message}>Loading...</div>
       </main>
     );
 
   if (error) {
     return (
       <main className={styles.Login}>
-        <h1 className={styles.altHeader}>Blog API</h1>
-        <div className={styles.altMessage}>A network error was encountered</div>
+        <h1 className={styles.header}>Blog API</h1>
+        <div className={styles.message}>A network error was encountered</div>
       </main>
     );
   }
@@ -96,7 +96,7 @@ const Login = () => {
       <form className={styles.form} onSubmit={submitForm}>
         <div className={styles.inputGroup}>
           <label className={styles.label} htmlFor="email">
-            Email:
+            Email
           </label>
           <input
             className={styles.input}
@@ -112,7 +112,7 @@ const Login = () => {
         </div>
         <div className={styles.inputGroup}>
           <label className={styles.label} htmlFor="password">
-            Password:
+            Password
           </label>
           <input
             className={styles.input}
@@ -123,10 +123,10 @@ const Login = () => {
             onChange={handlePasswordChange}
           />
           {formError?.password && (
-            <div className={styles.errorMessage}>{formError?.password}</div>
+            <div className={styles.inputError}>{formError?.password}</div>
           )}
           {formError?.generic && (
-            <div className={styles.errorMessage}>{formError?.generic}</div>
+            <div className={styles.inputError}>{formError?.generic}</div>
           )}
         </div>
         <input className={styles.submit} type="submit" value="Log In" />
