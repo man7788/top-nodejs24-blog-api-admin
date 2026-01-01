@@ -1,16 +1,18 @@
 .CommentList {
   border-radius: 5px;
-  border: 1px solid darkgray;
+  border: 1px solid var(--border-gray);
   display: grid;
-  grid-template-columns: repeat(
-    6,
-    minmax(160px, 1fr)
-  ); /* Min width will not shrink to 100px, as Post component stops shrinking before the columns reach min-value */
+  /* Min width will not shrink to 160px, as Post component stops shrinking before the columns reach min-value */
+  grid-template-columns: repeat(6, minmax(10rem, 1fr));
   grid-template-rows: 1fr auto;
 }
 
+.message {
+  composes: ss-message from global;
+}
+
 .header {
-  background-color: var(--table-header-bg-color-grey);
+  background-color: var(--table-header-bg-gray);
   padding: 1rem;
 }
 
@@ -20,15 +22,6 @@
 
 .header:nth-child(5) {
   border-radius: 0 3px 0 0;
-}
-
-.altMessage {
-  font-size: 1rem;
-}
-
-.h2 {
-  font-size: 1rem;
-  margin: 0;
 }
 
 .ul {
