@@ -19,7 +19,7 @@ const Settings = () => {
   return (
     <main className={styles.Settings}>
       <header className={styles.header}>
-        <h1 className={styles.h1}>Settings</h1>
+        <h1>Settings</h1>
       </header>
       <nav className={styles.nav}>
         <Link
