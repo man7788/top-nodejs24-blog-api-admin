@@ -1,23 +1,170 @@
 :root {
-  --primary-color: rgba(255, 255, 255, 0.87);
-  --primary-background-color: #242424;
+  /* Colors */
+  --text-primary: rgba(255, 255, 255, 0.87);
+  --bg-primary: #242424;
 
-  --border-color-grey: grey;
+  --border-gray: gray;
 
-  --link-hover-bg-color-grey: grey;
+  --link-hover-bg-gray: gray;
   --link-hover-bg-color-white: white;
-  --link-bg-color-grey: grey;
 
-  --popup-bg-color: black;
+  --btn-bg-gray: gray;
+  --btn-bg-firebrick: firebrick;
+  --btn-hover-bg-darkgray: darkgray;
+  --btn-hover-bg-crimson: crimson;
+  --btn-active-bg-dimgray: dimgray;
+  --btn-active-bg-maroon: maroon;
 
-  --table-header-bg-color-grey: grey;
+  --popup-bg-black: black;
+
+  --table-header-bg-gray: gray;
+
+  /* Sizes */
+  --app-width: 320px;
+  --app-height: 100vh;
 }
 
+/* App size */
 :global(.app-height-width) {
-  min-width: 500px;
-  height: 100vh;
+  min-width: var(--app-width);
+  min-height: var(--app-height);
 }
 
+/* Full screen container */
+:global(.fs-container) {
+  min-width: var(--app-width);
+  min-height: var(--app-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+:global(.fs-header) {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+:global(.fs-message) {
+  font-size: 1.25rem;
+}
+
+/* Split screen container */
+:global(.ss-container) {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  overflow-y: scroll;
+}
+
+:global(.ss-header) {
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+:global(.ss-message) {
+  font-size: 1.25rem;
+}
+
+:global(.ss-form-container) {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem 0 1rem;
+}
+
+:global(.ss-form) {
+  min-width: 31.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+:global(.ss-form-header) {
+  font-size: 1.25rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+:global(.ss-input-group) {
+  height: 5.75rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+:global(.ss-label) {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+:global(.ss-input-error) {
+  font-size: 1rem;
+}
+
+:global(.ss-input) {
+  border-radius: 10px;
+  border: 1px solid var(--border-gray);
+  font-size: 1rem;
+  height: 2.5rem;
+  padding: 1rem;
+}
+
+:global(.ss-textarea-group) {
+  height: 28.25rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+:global(.ss-textarea) {
+  border-radius: 10px;
+  border: 1px solid var(--border-gray);
+  font-size: 1rem;
+  height: 25rem;
+  padding: 1rem;
+  resize: none;
+}
+
+:global(.ss-select-group) {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+:global(.ss-select) {
+  width: fit-content;
+  font-size: 1rem;
+  padding: 0.25rem;
+}
+
+:global(.ss-form-button-container) {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+:global(.ss-form-button) {
+  height: 2.25rem;
+  width: 6.25rem;
+}
+
+/* Button */
+:global(.button) {
+  border-radius: 5px;
+  border: none;
+  background-color: var(--btn-bg-gray);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Flexbox */
 :global(.flex-column) {
   display: flex;
   flex-direction: column;
@@ -30,10 +177,14 @@
   align-items: center;
 }
 
-:global(.flex-column-align-center) {
+:global(.flex-column-align) {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+:global(.flex-row) {
+  display: flex;
 }
 
 :global(.flex-row-center) {
@@ -42,12 +193,12 @@
   align-items: center;
 }
 
-:global(.flex-row-justify-center) {
+:global(.flex-row-justify) {
   display: flex;
   justify-content: center;
 }
 
-:global(.flex-row-align-center) {
+:global(.flex-row-align) {
   display: flex;
   align-items: center;
 }
