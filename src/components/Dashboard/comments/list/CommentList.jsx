@@ -10,16 +10,16 @@ const CommentList = () => {
   const [listLoading, setListLoading] = useState(null);
 
   if (loading || listLoading) {
-    return <div className={styles.altMessage}>loading...</div>;
+    return <div className={styles.message}>Loading...</div>;
   }
 
   if (error?.statusCode === 401 || listError?.statusCode === 401) {
-    return <div className={styles.altMessage}>401 - Unauthorized</div>;
+    return <div className={styles.message}>401 - Unauthorized</div>;
   }
 
   if (error || listError) {
     return (
-      <div className={styles.altMessage}>A network error was encountered</div>
+      <div className={styles.message}>A network error was encountered</div>
     );
   }
 
