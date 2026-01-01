@@ -54,23 +54,23 @@ const Profile = () => {
   };
 
   if (loading || formLoading) {
-    return <h2 className={styles.h2}>loading...</h2>;
+    return <h2 className={styles.message}>Loading...</h2>;
   }
 
   if (error?.statusCode === 401) {
-    return <h2 className={styles.h2}>401 - Unauthorized</h2>;
+    return <h2 className={styles.message}>401 - Unauthorized</h2>;
   }
 
   if (error || submitError) {
-    return <h2 className={styles.h2}>A network error was encountered</h2>;
+    return <h2 className={styles.message}>A network error was encountered</h2>;
   }
 
   return (
     <div className={styles.Profile}>
-      <form onSubmit={submitForm}>
+      <form className={styles.form} onSubmit={submitForm}>
         <div className={styles.inputGroup}>
           <label className={styles.label} htmlFor="name">
-            Name:
+            Name
           </label>
           <input
             className={styles.input}
