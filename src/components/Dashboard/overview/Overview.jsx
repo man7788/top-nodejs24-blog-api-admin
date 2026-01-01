@@ -8,7 +8,7 @@ const Overview = () => {
     return (
       <main className={styles.Overview}>
         <h1 className={styles.header}>Overview</h1>
-        <div className={styles.altMessage}>Loading...</div>
+        <div className={styles.message}>Loading...</div>
       </main>
     );
   }
@@ -17,7 +17,7 @@ const Overview = () => {
     return (
       <main className={styles.Overview}>
         <h1 className={styles.header}>Overview</h1>
-        <div className={styles.altMessage}>401 - Unauthorized</div>
+        <div className={styles.message}>401 - Unauthorized</div>
       </main>
     );
   }
@@ -26,7 +26,7 @@ const Overview = () => {
     return (
       <main className={styles.Overview}>
         <h1 className={styles.header}>Overview</h1>
-        <div className={styles.altMessage}>A network error was encountered</div>
+        <div className={styles.message}>A network error was encountered</div>
       </main>
     );
   }
@@ -34,11 +34,11 @@ const Overview = () => {
   return (
     <main className={styles.Overview}>
       <h1 className={styles.header}>Overview</h1>
-      <article className={styles.article}>
+      <article className={styles.card}>
         <header>
-          <h2 className={styles.h2}>Statistics</h2>
+          <h2 className={styles.infoHeader}>Statistics</h2>
         </header>
-        <div className={styles.statistics}>{posts?.length} posts</div>
+        <div className={styles.infoMessage}>{posts?.length} posts</div>
       </article>
     </main>
   );
