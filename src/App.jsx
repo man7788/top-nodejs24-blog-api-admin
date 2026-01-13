@@ -3,7 +3,7 @@ import { Navigate } from 'react-router';
 import useAuth from './hooks/useAuth';
 
 function App() {
-  const { user, loading, error } = useAuth();
+  const { error, loading } = useAuth();
 
   if (loading) {
     return (
@@ -14,14 +14,10 @@ function App() {
     );
   }
 
-  if (error.statusCode === 401) {
+  if (error?.statusCode === 401) {
     return (
       <div className={styles.App}>
-        {user ? (
-          <Navigate to="/dashboard" replace={true} />
-        ) : (
-          <Navigate to="/login" replace={true} />
-        )}
+        <Navigate to="/login" replace={true} />
       </div>
     );
   }
@@ -34,6 +30,12 @@ function App() {
       </main>
     );
   }
+
+  return (
+    <div className={styles.App}>
+      <Navigate to="/dashboard" replace={true} />
+    </div>
+  );
 }
 
 export default App;
