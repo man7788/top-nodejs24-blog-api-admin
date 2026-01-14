@@ -1,3 +1,11 @@
-.loading {
-  display: flex;
+.PrivateRoute {
+  composes: fs-container from global;
+}
+
+.header {
+  composes: fs-header from global;
+}
+
+.message {
+  composes: fs-message from global;
 }
