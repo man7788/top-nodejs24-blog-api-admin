@@ -5,9 +5,9 @@ import useAuth from '../../hooks/useAuth';
 import submitLogin from '../../api/submitLogin';
 
 const Login = () => {
-  const { user, login, loading } = useAuth();
+  const { user, error, login, loading } = useAuth();
 
-  const [error, setError] = useState(null);
+  const [loginError, setLoginError] = useState(null);
   const [formLoading, setFormLoading] = useState(false);
   const [formError, setFormError] = useState(null);
 
@@ -52,7 +52,7 @@ const Login = () => {
         setFormLoading(false);
         return;
       } else {
-        setError(true);
+        setLoginError(true);
         setFormLoading(false);
         return;
       }
@@ -63,15 +63,11 @@ const Login = () => {
     const loginError = await login();
 
     if (loginError) {
-      setError(true);
+      setLoginError(true);
       setFormLoading(false);
       return;
     }
   };
-
-  if (user) {
-    return <Navigate to="/dashboard" replace={true} />;
-  }
 
   if (loading || formLoading)
     return (
@@ -81,13 +77,17 @@ const Login = () => {
       </main>
     );
 
-  if (error) {
+  if ((error && error.statusCode !== 401) || loginError) {
     return (
       <main className={styles.Login}>
         <h1 className={styles.header}>Blog API</h1>
         <div className={styles.message}>A network error was encountered</div>
       </main>
     );
+  }
+
+  if (user) {
+    return <Navigate to="/dashboard" replace={true} />;
   }
 
   return (
