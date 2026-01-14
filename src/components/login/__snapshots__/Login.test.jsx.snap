@@ -1,0 +1,272 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Login > From submission > should login using auth provider's login method 1`] = `
+<div>
+  <div
+    class="_Dashboard_f2f392"
+  >
+    <aside
+      class="_aside_f2f392"
+    >
+      <h1
+        class="_header_f2f392"
+      >
+        Dashboard
+      </h1>
+      <nav
+        class="_nav_f2f392"
+      >
+        <a
+          class="_linkHightlight_f2f392"
+          data-discover="true"
+          href="/dashboard"
+        >
+          Overview
+        </a>
+        <a
+          class="_link_f2f392"
+          data-discover="true"
+          href="/dashboard/posts"
+        >
+          Posts
+        </a>
+        <a
+          class="_link_f2f392"
+          data-discover="true"
+          href="/dashboard/comments"
+        >
+          Comments
+        </a>
+        <a
+          class="_link_f2f392"
+          data-discover="true"
+          href="/dashboard/settings"
+        >
+          Settings
+        </a>
+        <button
+          class="_more_f2f392"
+        >
+          More
+        </button>
+      </nav>
+    </aside>
+    <main
+      class="_Overview_65549a"
+    >
+      <h1
+        class="_header_65549a"
+      >
+        Overview
+      </h1>
+      <div
+        class="_message_65549a"
+      >
+        Loading...
+      </div>
+    </main>
+  </div>
+</div>
+`;
+
+exports[`Login > From submission > should render from submit error 1`] = `
+<div>
+  <main
+    class="_Login_cc0d5f"
+  >
+    <h1
+      class="_header_cc0d5f"
+    >
+      Blog API
+    </h1>
+    <div
+      class="_message_cc0d5f"
+    >
+      A network error was encountered
+    </div>
+  </main>
+</div>
+`;
+
+exports[`Login > From submission > should render login error 1`] = `
+<div>
+  <main
+    class="_Login_cc0d5f"
+  >
+    <h1
+      class="_header_cc0d5f"
+    >
+      Blog API
+    </h1>
+    <div
+      class="_message_cc0d5f"
+    >
+      A network error was encountered
+    </div>
+  </main>
+</div>
+`;
+
+exports[`Login > should render Login 1`] = `
+<div>
+  <main
+    class="_Login_cc0d5f"
+  >
+    <h1
+      class="_header_cc0d5f"
+    >
+      Blog API
+    </h1>
+    <form
+      class="_form_cc0d5f"
+    >
+      <div
+        class="_inputGroup_cc0d5f"
+      >
+        <label
+          class="_label_cc0d5f"
+          for="email"
+        >
+          Email
+        </label>
+        <input
+          class="_input_cc0d5f"
+          id="email"
+          name="email"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="_inputGroup_cc0d5f"
+      >
+        <label
+          class="_label_cc0d5f"
+          for="password"
+        >
+          Password
+        </label>
+        <input
+          class="_input_cc0d5f"
+          id="password"
+          name="password"
+          type="password"
+          value=""
+        />
+      </div>
+      <input
+        class="_submit_cc0d5f"
+        type="submit"
+        value="Log In"
+      />
+    </form>
+  </main>
+</div>
+`;
+
+exports[`Login > should render dashboard 1`] = `
+<div>
+  <div
+    class="_Dashboard_f2f392"
+  >
+    <aside
+      class="_aside_f2f392"
+    >
+      <h1
+        class="_header_f2f392"
+      >
+        Dashboard
+      </h1>
+      <nav
+        class="_nav_f2f392"
+      >
+        <a
+          class="_linkHightlight_f2f392"
+          data-discover="true"
+          href="/dashboard"
+        >
+          Overview
+        </a>
+        <a
+          class="_link_f2f392"
+          data-discover="true"
+          href="/dashboard/posts"
+        >
+          Posts
+        </a>
+        <a
+          class="_link_f2f392"
+          data-discover="true"
+          href="/dashboard/comments"
+        >
+          Comments
+        </a>
+        <a
+          class="_link_f2f392"
+          data-discover="true"
+          href="/dashboard/settings"
+        >
+          Settings
+        </a>
+        <button
+          class="_more_f2f392"
+        >
+          More
+        </button>
+      </nav>
+    </aside>
+    <main
+      class="_Overview_65549a"
+    >
+      <h1
+        class="_header_65549a"
+      >
+        Overview
+      </h1>
+      <div
+        class="_message_65549a"
+      >
+        Loading...
+      </div>
+    </main>
+  </div>
+</div>
+`;
+
+exports[`Login > should render error 1`] = `
+<div>
+  <main
+    class="_Login_cc0d5f"
+  >
+    <h1
+      class="_header_cc0d5f"
+    >
+      Blog API
+    </h1>
+    <div
+      class="_message_cc0d5f"
+    >
+      A network error was encountered
+    </div>
+  </main>
+</div>
+`;
+
+exports[`Login > should render loading 1`] = `
+<div>
+  <main
+    class="_Login_cc0d5f"
+  >
+    <h1
+      class="_header_cc0d5f"
+    >
+      Blog API
+    </h1>
+    <div
+      class="_message_cc0d5f"
+    >
+      Loading...
+    </div>
+  </main>
+</div>
+`;
