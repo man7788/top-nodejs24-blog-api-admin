@@ -1,0 +1,89 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Dashboard > should render error (unauthorized) 1`] = `
+<div>
+  <main
+    class="_Overview_65549a"
+  >
+    <h1
+      class="_header_65549a"
+    >
+      Overview
+    </h1>
+    <div
+      class="_message_65549a"
+    >
+      401 - Unauthorized
+    </div>
+  </main>
+</div>
+`;
+
+exports[`Dashboard > should render error 1`] = `
+<div>
+  <main
+    class="_Overview_65549a"
+  >
+    <h1
+      class="_header_65549a"
+    >
+      Overview
+    </h1>
+    <div
+      class="_message_65549a"
+    >
+      A network error was encountered
+    </div>
+  </main>
+</div>
+`;
+
+exports[`Dashboard > should render loading 1`] = `
+<div>
+  <main
+    class="_Overview_65549a"
+  >
+    <h1
+      class="_header_65549a"
+    >
+      Overview
+    </h1>
+    <div
+      class="_message_65549a"
+    >
+      Loading...
+    </div>
+  </main>
+</div>
+`;
+
+exports[`Dashboard > should render overview 1`] = `
+<div>
+  <main
+    class="_Overview_65549a"
+  >
+    <h1
+      class="_header_65549a"
+    >
+      Overview
+    </h1>
+    <article
+      class="_card_65549a"
+    >
+      <header>
+        <h2
+          class="_infoHeader_65549a"
+        >
+          Statistics
+        </h2>
+      </header>
+      <div
+        class="_infoMessage_65549a"
+      >
+        3
+         posts
+      </div>
+    </article>
+  </main>
+</div>
+`;
