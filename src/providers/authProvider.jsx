@@ -24,6 +24,7 @@ function AuthProvider({ children }, props) {
 
       if (result.user) {
         setLoading(false);
+        setError(null);
         setUser(result.user);
         return;
       }
@@ -41,6 +42,7 @@ function AuthProvider({ children }, props) {
     }
 
     if (result.user) {
+      setError(null);
       setUser(result.user);
       navigate('/dashboard', { replace: true });
     }
