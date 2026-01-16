@@ -8,7 +8,7 @@ const PostListItem = ({
   setListError,
   setListLoading,
   update,
-  setUpate,
+  setUpdate,
 }) => {
   const formattedDate = dateFormatter(post.createdAt);
 
@@ -17,7 +17,7 @@ const PostListItem = ({
 
     setListLoading(true);
 
-    const result = submitPostDelete(post.id);
+    const result = await submitPostDelete(post.id);
 
     if (result.error) {
       setListError(true);
@@ -25,7 +25,7 @@ const PostListItem = ({
       return;
     }
 
-    setUpate(!update);
+    setUpdate(!update);
     setListLoading(false);
   };
 
