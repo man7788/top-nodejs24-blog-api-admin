@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 
-const useEditPosts = () => {
+const useEditPost = () => {
   const { postId } = useParams();
 
   const [post, setPost] = useState(null);
@@ -50,4 +50,4 @@ const useEditPosts = () => {
   return { post, error, loading };
 };
 
-export default useEditPosts;
+export default useEditPost;
