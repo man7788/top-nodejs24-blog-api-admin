@@ -1,0 +1,238 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Post List > Delete post > should delete post and render post list 1`] = `
+<div>
+  <div
+    class="_PostList_3be64a"
+  >
+    <div
+      class="_header_3be64a"
+    >
+      <h2
+        class="_h2_3be64a"
+      >
+        Title
+      </h2>
+    </div>
+    <div
+      class="_header_3be64a"
+    >
+      <h2
+        class="_h2_3be64a"
+      >
+        Author
+      </h2>
+    </div>
+    <div
+      class="_header_3be64a"
+    >
+      <h2
+        class="_h2_3be64a"
+      >
+        Published
+      </h2>
+    </div>
+    <div
+      class="_header_3be64a"
+    />
+    <div
+      class="_header_3be64a"
+    />
+    <ul
+      class="_ul_3be64a"
+    >
+      <li
+        class="_PostListItem_d6174f"
+      >
+        <div
+          class="_title_d6174f"
+        >
+          Post title 2
+        </div>
+        <div
+          class="_author_d6174f"
+        >
+          foobar
+        </div>
+        <div
+          class="_published_d6174f"
+        >
+          12 Jan 2026 at 11:28:54
+        </div>
+        <a
+          class="_edit_d6174f"
+          data-discover="true"
+          href="/2/edit"
+        >
+          Edit
+        </a>
+        <form
+          class="_form_d6174f"
+        >
+          <input
+            class="_delete_d6174f"
+            type="submit"
+            value="Delete"
+          />
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Post List > Delete post > should render error 1`] = `
+<div>
+  <div
+    class="_message_3be64a"
+  >
+    A network error was encountered
+  </div>
+</div>
+`;
+
+exports[`Post List > should render error  1`] = `
+<div>
+  <div
+    class="_message_3be64a"
+  >
+    A network error was encountered
+  </div>
+</div>
+`;
+
+exports[`Post List > should render error (unauthorized) 1`] = `
+<div>
+  <div
+    class="_message_3be64a"
+  >
+    401 - Unauthorized
+  </div>
+</div>
+`;
+
+exports[`Post List > should render loading 1`] = `
+<div>
+  <div
+    class="_message_3be64a"
+  >
+    Loading...
+  </div>
+</div>
+`;
+
+exports[`Post List > should render post list 1`] = `
+<div>
+  <div
+    class="_PostList_3be64a"
+  >
+    <div
+      class="_header_3be64a"
+    >
+      <h2
+        class="_h2_3be64a"
+      >
+        Title
+      </h2>
+    </div>
+    <div
+      class="_header_3be64a"
+    >
+      <h2
+        class="_h2_3be64a"
+      >
+        Author
+      </h2>
+    </div>
+    <div
+      class="_header_3be64a"
+    >
+      <h2
+        class="_h2_3be64a"
+      >
+        Published
+      </h2>
+    </div>
+    <div
+      class="_header_3be64a"
+    />
+    <div
+      class="_header_3be64a"
+    />
+    <ul
+      class="_ul_3be64a"
+    >
+      <li
+        class="_PostListItem_d6174f"
+      >
+        <div
+          class="_title_d6174f"
+        >
+          Post title 1
+        </div>
+        <div
+          class="_author_d6174f"
+        >
+          foobar
+        </div>
+        <div
+          class="_published_d6174f"
+        >
+          12 Nov 2025 at 11:28:54
+        </div>
+        <a
+          class="_edit_d6174f"
+          data-discover="true"
+          href="/1/edit"
+        >
+          Edit
+        </a>
+        <form
+          class="_form_d6174f"
+        >
+          <input
+            class="_delete_d6174f"
+            type="submit"
+            value="Delete"
+          />
+        </form>
+      </li>
+      <li
+        class="_PostListItem_d6174f"
+      >
+        <div
+          class="_title_d6174f"
+        >
+          Post title 2
+        </div>
+        <div
+          class="_author_d6174f"
+        >
+          foobar
+        </div>
+        <div
+          class="_published_d6174f"
+        >
+          12 Jan 2026 at 11:28:54
+        </div>
+        <a
+          class="_edit_d6174f"
+          data-discover="true"
+          href="/2/edit"
+        >
+          Edit
+        </a>
+        <form
+          class="_form_d6174f"
+        >
+          <input
+            class="_delete_d6174f"
+            type="submit"
+            value="Delete"
+          />
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
