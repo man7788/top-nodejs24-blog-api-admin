@@ -290,7 +290,9 @@ describe('Login', () => {
         expect(verifyToken).toHaveBeenCalledTimes(2);
       });
 
-      expect(container).toMatchSnapshot();
+      await waitFor(() => {
+        expect(container).toMatchSnapshot();
+      });
     });
   });
 });
