@@ -14,11 +14,6 @@ const submitPostDelete = async (postId) => {
       },
     );
 
-    if (response.status === 401) {
-      const result = await response.json();
-      return result;
-    }
-
     if (response.status > 400) {
       const result = await response.json();
       throw new Error(result.error.message);
