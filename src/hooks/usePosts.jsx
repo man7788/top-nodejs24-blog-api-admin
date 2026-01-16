@@ -5,7 +5,7 @@ const usePosts = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const [update, setUpate] = useState(false);
+  const [update, setUpdate] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -46,7 +46,7 @@ const usePosts = () => {
     fetchData();
   }, [update]);
 
-  return { posts, error, loading, update, setUpate };
+  return { posts, error, loading, update, setUpdate };
 };
 
 export default usePosts;
