@@ -4,7 +4,7 @@ import usePosts from '../../../../hooks/usePosts';
 import PostListItem from './PostListItem';
 
 const PostList = () => {
-  const { posts, error, loading, update, setUpate } = usePosts();
+  const { posts, error, loading, update, setUpdate } = usePosts();
 
   const [listError, setListError] = useState(null);
   const [listLoading, setListLoading] = useState(null);
@@ -13,7 +13,7 @@ const PostList = () => {
     return <div className={styles.message}>Loading...</div>;
   }
 
-  if (error?.statusCode === 401 || listError?.statusCode === 401) {
+  if (error?.statusCode === 401) {
     return <div className={styles.message}>401 - Unauthorized</div>;
   }
 
@@ -43,7 +43,7 @@ const PostList = () => {
             post={post}
             setListError={setListError}
             update={update}
-            setUpate={setUpate}
+            setUpdate={setUpdate}
             setListLoading={setListLoading}
           />
         ))}
