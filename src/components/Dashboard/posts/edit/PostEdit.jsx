@@ -1,12 +1,12 @@
 import styles from './PostEdit.module.css';
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router';
-import useEditPosts from '../../../../hooks/useEditPost';
+import useEditPost from '../../../../hooks/useEditPost';
 import submitPostUpdate from '../../../../api/submitPostUpdate';
 
 const PostEdit = () => {
   const { postId } = useParams();
-  const { post, error, loading } = useEditPosts();
+  const { post, error, loading } = useEditPost();
 
   const [submitError, setSubmitError] = useState(null);
   const [formError, setFormError] = useState(null);
