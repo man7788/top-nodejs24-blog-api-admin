@@ -1,0 +1,41 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Post List Item > should render post list item 1`] = `
+<div>
+  <li
+    class="_PostListItem_d6174f"
+  >
+    <div
+      class="_title_d6174f"
+    >
+      Post title 1
+    </div>
+    <div
+      class="_author_d6174f"
+    >
+      foobar
+    </div>
+    <div
+      class="_published_d6174f"
+    >
+      12 Nov 2025 at 11:28:54
+    </div>
+    <a
+      class="_edit_d6174f"
+      data-discover="true"
+      href="/1/edit"
+    >
+      Edit
+    </a>
+    <form
+      class="_form_d6174f"
+    >
+      <input
+        class="_delete_d6174f"
+        type="submit"
+        value="Delete"
+      />
+    </form>
+  </li>
+</div>
+`;
