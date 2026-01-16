@@ -27,12 +27,10 @@ const routes = [
       {
         path: '/',
         element: <App />,
-        errorElement: <ErrorPage />,
       },
       {
         path: '/login',
         element: <Login />,
-        errorElement: <ErrorPage />,
       },
       {
         path: '/dashboard',
