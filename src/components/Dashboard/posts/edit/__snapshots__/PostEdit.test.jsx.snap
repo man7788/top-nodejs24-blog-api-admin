@@ -1,0 +1,135 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Post Edit > Form submission > should render form submit error 1`] = `
+<div>
+  <div
+    class="_message_94c798"
+  >
+    A network error was encountered
+  </div>
+</div>
+`;
+
+exports[`Post Edit > should render error (unauthorized) 1`] = `
+<div>
+  <div
+    class="_message_94c798"
+  >
+    A network error was encountered
+  </div>
+</div>
+`;
+
+exports[`Post Edit > should render loading 1`] = `
+<div>
+  <div
+    class="_message_94c798"
+  >
+    Loading...
+  </div>
+</div>
+`;
+
+exports[`Post Edit > should render post edit  1`] = `
+<div>
+  <section
+    class="_PostEdit_94c798"
+  >
+    <div
+      class="_header_94c798"
+    >
+      <h2>
+        Edit
+      </h2>
+    </div>
+    <form
+      class="_form_94c798"
+    >
+      <div
+        class="_inputGroup_94c798"
+      >
+        <label
+          class="_label_94c798"
+          for="title"
+        >
+          Title
+        </label>
+        <input
+          class="_input_94c798"
+          id="title"
+          name="title"
+          type="text"
+          value="Post title 1"
+        />
+      </div>
+      <div
+        class="_textareaGroup_94c798"
+      >
+        <label
+          class="_label_94c798"
+          for="content"
+        >
+          Content
+        </label>
+        <textarea
+          class="_textarea_94c798"
+          id="content"
+          name="content"
+          type="text"
+        >
+          Post content 1
+        </textarea>
+      </div>
+      <div
+        class="_selectGroup_94c798"
+      >
+        <label
+          class="_label_94c798"
+          for="status"
+        >
+          Status
+        </label>
+        <select
+          class="_select_94c798"
+          id="status"
+          name="status"
+        >
+          <option
+            value="true"
+          >
+            Published
+          </option>
+          <option
+            value="false"
+          >
+            Unpublished
+          </option>
+        </select>
+      </div>
+      <div
+        class="_buttonContainer_94c798"
+      >
+        <input
+          class="_submit_94c798"
+          type="submit"
+          value="Submit"
+        />
+      </div>
+      <div
+        class="_buttonContainer_94c798"
+      >
+        <a
+          data-discover="true"
+          href="/dashboard/posts"
+        >
+          <button
+            class="_cancel_94c798"
+          >
+            Cancel
+          </button>
+        </a>
+      </div>
+    </form>
+  </section>
+</div>
+`;
