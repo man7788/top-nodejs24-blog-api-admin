@@ -136,6 +136,7 @@ const PostCreate = () => {
           </label>
           <select
             className={styles.select}
+            id="status"
             name="status"
             value={form.published}
             onChange={handleStatusChange}
