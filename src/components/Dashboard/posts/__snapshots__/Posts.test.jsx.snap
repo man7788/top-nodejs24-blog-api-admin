@@ -135,6 +135,7 @@ exports[`Posts > Post create > should render post create 1`] = `
           </label>
           <select
             class="_select_22164d"
+            id="status"
             name="status"
           >
             <option
@@ -401,11 +402,13 @@ exports[`Posts > Post edit > should render post edit 1`] = `
         >
           <label
             class="_label_94c798"
+            for="status"
           >
             Status
           </label>
           <select
             class="_select_94c798"
+            id="status"
             name="status"
           >
             <option
@@ -514,11 +517,13 @@ exports[`Posts > Post edit > should submit post edit and refresh page 1`] = `
         >
           <label
             class="_label_94c798"
+            for="status"
           >
             Status
           </label>
           <select
             class="_select_94c798"
+            id="status"
             name="status"
           >
             <option
