@@ -143,10 +143,12 @@ const PostEdit = () => {
           )}
         </div>
         <div className={styles.selectGroup}>
-          <label className={styles.label}>Status</label>
-
+          <label className={styles.label} htmlFor="status">
+            Status
+          </label>
           <select
             className={styles.select}
+            id="status"
             name="status"
             value={form.published}
             onChange={handleStatusChange}
