@@ -183,11 +183,13 @@ exports[`Comments > Comment edit > should render comment edit 1`] = `
         >
           <label
             class="_label_f3f658"
+            for="status"
           >
             Status
           </label>
           <select
             class="_select_f3f658"
+            id="status"
             name="status"
           >
             <option
@@ -291,11 +293,13 @@ exports[`Comments > Comment edit > should submit comment edit and refresh page 1
         >
           <label
             class="_label_f3f658"
+            for="status"
           >
             Status
           </label>
           <select
             class="_select_f3f658"
+            id="status"
             name="status"
           >
             <option
