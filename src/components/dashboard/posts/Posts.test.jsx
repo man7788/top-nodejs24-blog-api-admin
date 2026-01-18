@@ -177,19 +177,6 @@ describe('Posts', () => {
 
   describe('Post edit', () => {
     beforeAll(() => {
-      useVerifyToken.mockReturnValue({
-        error: null,
-        loading: false,
-      });
-    });
-
-    it('should render post edit', async () => {
-      const user = userEvent.setup();
-
-      const router = createMemoryRouter(routes, {
-        initialEntries: ['/dashboard/posts'],
-      });
-
       usePosts.mockReturnValue({
         posts,
         error: null,
@@ -200,6 +187,18 @@ describe('Posts', () => {
         post,
         error: null,
         loading: false,
+      });
+
+      submitPostUpdate.mockReturnValue({
+        id: 1,
+      });
+    });
+
+    it('should render post edit', async () => {
+      const user = userEvent.setup();
+
+      const router = createMemoryRouter(routes, {
+        initialEntries: ['/dashboard/posts'],
       });
 
       const { container } = render(<RouterProvider router={router} />);
@@ -216,22 +215,6 @@ describe('Posts', () => {
 
       const router = createMemoryRouter(routes, {
         initialEntries: ['/dashboard/posts'],
-      });
-
-      usePosts.mockReturnValue({
-        posts,
-        error: null,
-        loading: false,
-      });
-
-      useEditPost.mockReturnValue({
-        post,
-        error: null,
-        loading: false,
-      });
-
-      submitPostUpdate.mockReturnValue({
-        id: 1,
       });
 
       const { container } = render(<RouterProvider router={router} />);
@@ -258,18 +241,6 @@ describe('Posts', () => {
 
       const router = createMemoryRouter(routes, {
         initialEntries: ['/dashboard/posts'],
-      });
-
-      usePosts.mockReturnValue({
-        posts,
-        error: null,
-        loading: false,
-      });
-
-      useEditPost.mockReturnValue({
-        post,
-        error: null,
-        loading: false,
       });
 
       const { container } = render(<RouterProvider router={router} />);
