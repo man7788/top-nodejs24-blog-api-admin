@@ -8,7 +8,7 @@ const CommentListItem = ({
   setListError,
   setListLoading,
   update,
-  setUpate,
+  setUpdate,
 }) => {
   const formattedDate = dateFormatter(comment.createdAt);
 
@@ -25,7 +25,7 @@ const CommentListItem = ({
       return;
     }
 
-    setUpate(!update);
+    setUpdate(!update);
     setListLoading(false);
   };
 
