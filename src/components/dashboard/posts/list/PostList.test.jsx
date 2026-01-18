@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeAll } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import userEvent from '@testing-library/user-event';
@@ -110,9 +110,7 @@ describe('Post List', () => {
   });
 
   describe('Delete post', () => {
-    it('should render error', async () => {
-      const user = userEvent.setup();
-
+    beforeAll(() => {
       usePosts.mockReturnValue({
         posts,
         error: null,
@@ -120,6 +118,10 @@ describe('Post List', () => {
         update: false,
         setUpdate: vi.fn(),
       });
+    });
+
+    it('should render error', async () => {
+      const user = userEvent.setup();
 
       const { container } = render(
         <MemoryRouter>
@@ -140,14 +142,6 @@ describe('Post List', () => {
 
     it('should delete post and render post list', async () => {
       const user = userEvent.setup();
-
-      usePosts.mockReturnValue({
-        posts,
-        error: null,
-        loading: false,
-        update: false,
-        setUpdate: vi.fn(),
-      });
 
       const { container } = render(
         <MemoryRouter>
