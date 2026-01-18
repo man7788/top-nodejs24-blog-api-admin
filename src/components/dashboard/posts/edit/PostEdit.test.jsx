@@ -52,7 +52,7 @@ describe('Post Edit', () => {
   it('should render error (unauthorized)', async () => {
     useEditPost.mockReturnValue({
       post: null,
-      error: { statudCode: 401 },
+      error: { statusCode: 401 },
       loading: false,
     });
 

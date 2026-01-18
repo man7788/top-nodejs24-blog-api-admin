@@ -15,7 +15,7 @@ exports[`Post Edit > should render error (unauthorized) 1`] = `
   <div
     class="_message_94c798"
   >
-    A network error was encountered
+    401 - Unauthorized
   </div>
 </div>
 `;
