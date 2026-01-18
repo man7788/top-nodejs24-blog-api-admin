@@ -4,7 +4,7 @@ import useComments from '../../../../hooks/useComments';
 import CommentListItem from './CommentListItem';
 
 const CommentList = () => {
-  const { comments, error, loading, update, setUpate } = useComments();
+  const { comments, error, loading, update, setUpdate } = useComments();
 
   const [listError, setListError] = useState(null);
   const [listLoading, setListLoading] = useState(null);
@@ -46,7 +46,7 @@ const CommentList = () => {
             comment={comment}
             setListError={setListError}
             update={update}
-            setUpate={setUpate}
+            setUpdate={setUpdate}
             setListLoading={setListLoading}
           />
         ))}
