@@ -25,7 +25,7 @@ exports[`Post Create > should render error (unauthorized) 1`] = `
   <div
     class="_message_22164d"
   >
-    A network error was encountered
+    401 - Unauthorized
   </div>
 </div>
 `;

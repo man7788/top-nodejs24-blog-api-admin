@@ -33,7 +33,7 @@ describe('Post Create', () => {
 
   it('should render error (unauthorized)', async () => {
     useVerifyToken.mockReturnValue({
-      error: { statudCode: 401 },
+      error: { statusCode: 401 },
       loading: false,
     });
 
