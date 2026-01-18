@@ -1,0 +1,140 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Comment Edit > Form submission > should render form submit error 1`] = `
+<div>
+  <div
+    class="_message_f3f658"
+  >
+    A network error was encountered
+  </div>
+</div>
+`;
+
+exports[`Comment Edit > should render comment edit 1`] = `
+<div>
+  <section
+    class="_CommentEdit_f3f658"
+  >
+    <div
+      class="_header_f3f658"
+    >
+      <h2>
+        Edit
+      </h2>
+      <h3
+        class="_subHeader_f3f658"
+      >
+        Post: 
+        Post title 1
+      </h3>
+      <h3
+        class="_subHeader_f3f658"
+      >
+        Comment author: 
+        foobar
+      </h3>
+    </div>
+    <form
+      class="_form_f3f658"
+    >
+      <div
+        class="_textareaGroup_f3f658"
+      >
+        <label
+          class="_label_f3f658"
+          for="content"
+        >
+          Comment
+        </label>
+        <textarea
+          class="_textarea_f3f658"
+          id="content"
+          name="content"
+          type="text"
+        >
+          Comment content 1
+        </textarea>
+      </div>
+      <div
+        class="_selectGroup_f3f658"
+      >
+        <label
+          class="_label_f3f658"
+          for="status"
+        >
+          Status
+        </label>
+        <select
+          class="_select_f3f658"
+          id="status"
+          name="status"
+        >
+          <option
+            value="true"
+          >
+            Published
+          </option>
+          <option
+            value="false"
+          >
+            Unpublished
+          </option>
+        </select>
+      </div>
+      <div
+        class="_buttonContainer_f3f658"
+      >
+        <input
+          class="_submit_f3f658"
+          type="submit"
+          value="Submit"
+        />
+      </div>
+      <div
+        class="_buttonContainer_f3f658"
+      >
+        <a
+          data-discover="true"
+          href="/dashboard/comments"
+        >
+          <button
+            class="_cancel_f3f658"
+          >
+            Cancel
+          </button>
+        </a>
+      </div>
+    </form>
+  </section>
+</div>
+`;
+
+exports[`Comment Edit > should render error (unauthorized) 1`] = `
+<div>
+  <div
+    class="_message_f3f658"
+  >
+    401 - Unauthorized
+  </div>
+</div>
+`;
+
+exports[`Comment Edit > should render error 1`] = `
+<div>
+  <div
+    class="_message_f3f658"
+  >
+    A network error was encountered
+  </div>
+</div>
+`;
+
+exports[`Comment Edit > should render loading 1`] = `
+<div>
+  <div
+    class="_message_f3f658"
+  >
+    Loading...
+  </div>
+</div>
+`;
