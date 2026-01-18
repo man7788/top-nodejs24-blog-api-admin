@@ -1,0 +1,63 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Comment List Item > should render comment list item 1`] = `
+<div>
+  <li
+    class="_CommentListItem_3a9f83"
+  >
+    <div
+      class="_author_3a9f83"
+    >
+      <p
+        class="_p_3a9f83"
+      >
+        foobar
+      </p>
+      <p
+        class="_p_3a9f83"
+      >
+        foo@bar.com
+      </p>
+    </div>
+    <div
+      class="_comment_3a9f83"
+    >
+      <p
+        class="_p_3a9f83"
+      >
+        Comment content 1
+      </p>
+    </div>
+    <div
+      class="_post_3a9f83"
+    >
+      <p
+        class="_p_3a9f83"
+      >
+        Post title 1
+      </p>
+    </div>
+    <div
+      class="_submitted_3a9f83"
+    >
+      4 Dec 2025 at 08:00:00
+    </div>
+    <a
+      class="_edit_3a9f83"
+      data-discover="true"
+      href="/1/edit"
+    >
+      Edit
+    </a>
+    <form
+      class="_form_3a9f83"
+    >
+      <input
+        class="_delete_3a9f83"
+        type="submit"
+        value="Delete"
+      />
+    </form>
+  </li>
+</div>
+`;
