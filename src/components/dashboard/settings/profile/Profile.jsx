@@ -1,18 +1,26 @@
 import styles from './Profile.module.css';
-import { useState } from 'react';
-import verifyToken from '../../../../api/verifyToken';
+import { useState, useEffect } from 'react';
+import useVerifyToken from '../../../../hooks/useVerifyToken';
 import submitProfile from '../../../../api/submitProfile';
 import useAuth from '../../../../hooks/useAuth';
 
 const Profile = () => {
   const { user, update, setUpdate } = useAuth();
-  const { error, loading } = verifyToken();
+  const { error, loading } = useVerifyToken();
 
   const [submitError, setSubmitError] = useState(null);
   const [formError, setFormError] = useState(null);
   const [formLoading, setFormLoading] = useState(false);
 
-  const [form, setForm] = useState({ name: user.name });
+  const [form, setForm] = useState({ name: '' });
+
+  useEffect(() => {
+    if (user) {
+      setForm({
+        name: user.name,
+      });
+    }
+  }, [user]);
 
   const handleNameChange = (e) => {
     setForm({
