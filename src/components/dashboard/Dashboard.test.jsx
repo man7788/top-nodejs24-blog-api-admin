@@ -7,11 +7,13 @@ import routes from '../../routes/routes';
 import * as useAuth from '../../hooks/useAuth';
 import usePosts from '../../hooks/usePosts';
 import useComments from '../../hooks/useComments';
+import useVerifyToken from '../../hooks/useVerifyToken';
 import verifyToken from '../../api/verifyToken';
 
 const useAuthSpy = vi.spyOn(useAuth, 'default');
 vi.mock('../../hooks/usePosts');
 vi.mock('../../hooks/useComments');
+vi.mock('../../hooks/useVerifyToken');
 vi.mock('../../api/verifyToken');
 
 afterEach(() => {
@@ -109,13 +111,20 @@ describe('Dashboard', () => {
       initialEntries: ['/dashboard'],
     });
 
+    useVerifyToken.mockReturnValue({
+      error: null,
+      loading: true,
+    });
+
     const { container } = render(<RouterProvider router={router} />);
 
     const settings = screen.getByRole('link', { name: /settings/i });
 
     await user.click(settings);
 
-    expect(container).toMatchSnapshot();
+    await waitFor(() => {
+      expect(container).toMatchSnapshot();
+    });
   });
 
   describe('Pop-up', () => {
