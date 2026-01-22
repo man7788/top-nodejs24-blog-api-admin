@@ -1,0 +1,46 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ErrorPage > should render error page 1`] = `
+<div>
+  <main
+    class="_ErrorPage_02f39b"
+  >
+    <h1
+      class="_header_02f39b"
+    >
+      Blog API
+    </h1>
+    <div
+      class="_message_02f39b"
+    >
+      404 - Page not found
+    </div>
+    <a
+      class="_home_02f39b"
+      data-discover="true"
+      href="/"
+    >
+      Return Home
+    </a>
+  </main>
+</div>
+`;
+
+exports[`ErrorPage > should render home 1`] = `
+<div>
+  <main
+    class="_App_48b8bb"
+  >
+    <h1
+      class="_header_48b8bb"
+    >
+      Blog API
+    </h1>
+    <div
+      class="_message_48b8bb"
+    >
+      Loading...
+    </div>
+  </main>
+</div>
+`;
