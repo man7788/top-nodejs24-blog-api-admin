@@ -1,0 +1,80 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Profile > Form submission > should render form submit error 1`] = `
+<div>
+  <h2
+    class="_message_835a5b"
+  >
+    A network error was encountered
+  </h2>
+</div>
+`;
+
+exports[`Profile > should render error (unauthorized) 1`] = `
+<div>
+  <h2
+    class="_message_835a5b"
+  >
+    401 - Unauthorized
+  </h2>
+</div>
+`;
+
+exports[`Profile > should render error 1`] = `
+<div>
+  <h2
+    class="_message_835a5b"
+  >
+    A network error was encountered
+  </h2>
+</div>
+`;
+
+exports[`Profile > should render loading 1`] = `
+<div>
+  <h2
+    class="_message_835a5b"
+  >
+    Loading...
+  </h2>
+</div>
+`;
+
+exports[`Profile > should render profile 1`] = `
+<div>
+  <div
+    class="_Profile_835a5b"
+  >
+    <form
+      class="_form_835a5b"
+    >
+      <div
+        class="_inputGroup_835a5b"
+      >
+        <label
+          class="_label_835a5b"
+          for="name"
+        >
+          Name
+        </label>
+        <input
+          class="_input_835a5b"
+          id="name"
+          name="name"
+          type="text"
+          value="foobar"
+        />
+      </div>
+      <div
+        class="_buttonContainer_835a5b"
+      >
+        <input
+          class="_submit_835a5b"
+          type="submit"
+          value="Submit"
+        />
+      </div>
+    </form>
+  </div>
+</div>
+`;
