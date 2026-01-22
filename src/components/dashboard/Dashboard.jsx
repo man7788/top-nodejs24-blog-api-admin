@@ -13,17 +13,11 @@ const Dashboard = () => {
   useEffect(() => {
     const path = location.pathname.split('/');
 
-    if (
-      path[2] === 'settings' ||
-      path[2] === 'profile' ||
-      path[2] === 'password'
-    ) {
-      path[2] = 'settings';
+    if (path[2] === undefined) {
+      return setCurentPage('overview');
     }
 
-    if (path[2] === undefined) {
-      setCurentPage('overview');
-    } else if (path[2] === 'settings') {
+    if (path.includes('settings', 'profile', 'password')) {
       setCurentPage('settings');
     } else {
       setCurentPage(path[2]);
