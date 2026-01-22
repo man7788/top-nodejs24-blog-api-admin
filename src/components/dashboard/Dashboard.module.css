@@ -2,7 +2,7 @@
   composes: app-height-width from global;
   background: var(--bg-primary);
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: min-content 5fr;
 }
 
 .aside {
@@ -31,7 +31,10 @@
   border-radius: 10px;
   color: var(--text-primary);
   font-size: 1rem;
-  height: 90%;
+  height: 2.5rem;
+  width: 10rem;
+  margin-bottom: 0.5rem;
+
   padding-left: 1rem;
 }
 
