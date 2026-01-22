@@ -1,0 +1,118 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Settings > should render settings with password 1`] = `
+<div>
+  <main
+    class="_Settings_5120b7"
+  >
+    <header
+      class="_header_5120b7"
+    >
+      <h1>
+        Settings
+      </h1>
+    </header>
+    <nav
+      class="_nav_5120b7"
+    >
+      <a
+        class="_link_5120b7"
+        data-discover="true"
+        href="/dashboard/profile"
+      >
+        Profile
+      </a>
+      <a
+        class="_linkHighlight_5120b7"
+        data-discover="true"
+        href="/dashboard/password"
+      >
+        Password
+      </a>
+    </nav>
+    <h2
+      class="_message_0e731f"
+    >
+      Loading...
+    </h2>
+  </main>
+</div>
+`;
+
+exports[`Settings > should render settings with profile (default view) 1`] = `
+<div>
+  <main
+    class="_Settings_5120b7"
+  >
+    <header
+      class="_header_5120b7"
+    >
+      <h1>
+        Settings
+      </h1>
+    </header>
+    <nav
+      class="_nav_5120b7"
+    >
+      <a
+        class="_linkHighlight_5120b7"
+        data-discover="true"
+        href="/dashboard/profile"
+      >
+        Profile
+      </a>
+      <a
+        class="_link_5120b7"
+        data-discover="true"
+        href="/dashboard/password"
+      >
+        Password
+      </a>
+    </nav>
+    <h2
+      class="_message_835a5b"
+    >
+      Loading...
+    </h2>
+  </main>
+</div>
+`;
+
+exports[`Settings > should render settings with profile 1`] = `
+<div>
+  <main
+    class="_Settings_5120b7"
+  >
+    <header
+      class="_header_5120b7"
+    >
+      <h1>
+        Settings
+      </h1>
+    </header>
+    <nav
+      class="_nav_5120b7"
+    >
+      <a
+        class="_linkHighlight_5120b7"
+        data-discover="true"
+        href="/dashboard/profile"
+      >
+        Profile
+      </a>
+      <a
+        class="_link_5120b7"
+        data-discover="true"
+        href="/dashboard/password"
+      >
+        Password
+      </a>
+    </nav>
+    <h2
+      class="_message_835a5b"
+    >
+      Loading...
+    </h2>
+  </main>
+</div>
+`;
