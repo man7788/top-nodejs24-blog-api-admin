@@ -97,7 +97,7 @@ describe('Profile', () => {
 
       const name = screen.getByRole('textbox', { name: /name/i });
 
-      await userEvent.clear(name);
+      await user.clear(name);
       await user.type(name, 'john doe');
 
       expect(name.value).toMatch('john doe');

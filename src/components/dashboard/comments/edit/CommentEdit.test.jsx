@@ -138,7 +138,7 @@ describe('Comment Edit', () => {
       const select = screen.getByRole('combobox', { name: /status/i });
       const unpublished = screen.getByRole('option', { name: /unpublished/i });
 
-      await userEvent.clear(content);
+      await user.clear(content);
 
       await user.type(content, 'Edited comment content');
       await user.selectOptions(select, 'Unpublished');

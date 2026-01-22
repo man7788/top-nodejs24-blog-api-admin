@@ -108,8 +108,8 @@ describe('Post Edit', () => {
       const select = screen.getByRole('combobox', { name: /status/i });
       const unpublished = screen.getByRole('option', { name: /unpublished/i });
 
-      await userEvent.clear(title);
-      await userEvent.clear(content);
+      await user.clear(title);
+      await user.clear(content);
 
       await user.type(title, 'Edited post title');
       await user.type(content, 'Edited post content');
