@@ -10,7 +10,6 @@ import submitLogin from '../../api/submitLogin';
 import verifyToken from '../../api/verifyToken';
 import usePosts from '../../hooks/usePosts';
 
-// vi.mock('../../hooks/useAuth');
 const useAuthSpy = vi.spyOn(useAuth, 'default');
 vi.mock('../../api/submitLogin');
 vi.mock('../../api/verifyToken');
@@ -286,11 +285,12 @@ describe('Login', () => {
 
       await user.click(loginButton);
 
-      await waitFor(() => {
-        expect(verifyToken).toHaveBeenCalledTimes(2);
+      const overview = await screen.findByRole('link', {
+        name: /overview/i,
       });
 
       await waitFor(() => {
+        expect(overview.className).toMatch('linkHightlight');
         expect(container).toMatchSnapshot();
       });
     });
